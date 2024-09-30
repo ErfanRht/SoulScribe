@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ms_undraw/ms_undraw.dart';
 import 'package:soulscribe/constants/colors.dart';
@@ -84,6 +85,13 @@ class IntroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ));
+    print("hereeee");
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: ConcentricPageView(

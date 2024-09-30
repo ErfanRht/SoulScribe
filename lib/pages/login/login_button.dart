@@ -19,7 +19,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {},
         child: Container(
           width: MediaQuery.of(context).size.width - 75,

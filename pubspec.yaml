@@ -39,6 +39,9 @@ dependencies:
   google_fonts: ^4.0.4
   ms_undraw: ^3.2.0
   font_awesome_flutter: ^10.7.0
+  page_transition: ^2.1.0
+  get: ^4.6.6
+  shared_preferences: ^2.3.2
 
 dev_dependencies:
   flutter_test:
@@ -56,13 +59,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.png
     - assets/images/logo.jpg

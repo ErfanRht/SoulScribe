@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ms_undraw/ms_undraw.dart';
-import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/pages/home/home.dart';
 import 'package:soulscribe/pages/login/login.dart';
+import 'package:soulscribe/widgets/page_transition/src/enum.dart';
+import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
 import 'transition/concentric_transition.dart';
 
 final pages = [
@@ -114,9 +114,12 @@ class IntroPage extends StatelessWidget {
         itemCount: pages.length,
         onFinish: () {
           Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const LoginScreen()),
-          );
+              context,
+              PageTransition(
+                  duration: const Duration(milliseconds: 150),
+                  childCurrent: const IntroPage(),
+                  type: PageTransitionType.fade,
+                  child: const LoginScreen()));
         },
         scaleFactor: 2,
         direction: Axis.vertical,

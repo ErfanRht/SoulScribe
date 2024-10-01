@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:soulscribe/pages/home/home.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
-import 'constants/routes.dart';
-import 'main_controller.dart';
-import 'pages/intro/intro.dart';
-import 'pages/loading/loading.dart';
+import 'package:soulscribe/constants/routes.dart';
+import 'package:soulscribe/main_controller.dart';
+import 'package:soulscribe/pages/intro/intro.dart';
+import 'package:soulscribe/pages/loading/loading.dart';
 
 void main() {
   runApp(SoulScript());

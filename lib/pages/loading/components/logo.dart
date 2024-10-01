@@ -34,6 +34,7 @@ class LoadingLogo extends StatelessWidget {
             duration: _.animationSpeed,
             child: Text(
               "SoulScript",
+              textAlign: TextAlign.center,
               style: GoogleFonts.ubuntu(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -51,7 +52,7 @@ class LoadingLogo extends StatelessWidget {
               style: GoogleFonts.ubuntu(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
-                  fontSize: 13),
+                  fontSize: 10),
             ),
           ),
         ],

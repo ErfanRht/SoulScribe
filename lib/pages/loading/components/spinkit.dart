@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/loading/animations.dart';
 
 class LoadingSpinkit extends StatelessWidget {

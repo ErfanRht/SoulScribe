@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
+import 'package:soulscribe/constants/routes.dart';
+import 'package:soulscribe/main_controller.dart';
+import 'package:soulscribe/models/user/user-name.dart';
 import 'package:soulscribe/widgets/rounded_loading_button.dart';
 
 class SetupButton extends StatefulWidget {
@@ -19,24 +22,24 @@ class _SetupButtonState extends State<SetupButton> {
       RoundedLoadingButtonController();
 
   void _setName() async {
-    // await setUserName(userName: Get.find<MainController>().userName)
-    //     .then((value) {
-    //   if (value) {
-    //     Timer(Duration(seconds: 2), () {
-    //       _btnController.success();
-    //       Timer(Duration(milliseconds: 1500), () {
-    //         Navigator.pushReplacementNamed(context, home_route);
-    //       });
-    //     });
-    //   } else {
-    //     Timer(Duration(seconds: 2), () {
-    //       _btnController.error();
-    //       Timer(Duration(seconds: 2), () {
-    //         _btnController.reset();
-    //       });
-    //     });
-    //   }
-    // });
+    await setUserName(userName: Get.find<MainController>().userName)
+        .then((value) {
+      if (value) {
+        Timer(const Duration(seconds: 2), () {
+          _btnController.success();
+          Timer(const Duration(milliseconds: 1500), () {
+            Navigator.pushReplacementNamed(context, home_route);
+          });
+        });
+      } else {
+        Timer(const Duration(seconds: 2), () {
+          _btnController.error();
+          Timer(const Duration(seconds: 2), () {
+            _btnController.reset();
+          });
+        });
+      }
+    });
   }
 
   @override

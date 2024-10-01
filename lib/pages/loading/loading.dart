@@ -1,6 +1,7 @@
+// ignore_for_file: no_wildcard_variable_uses, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/routes.dart';
 import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/models/user/user-name.dart';
@@ -14,6 +15,7 @@ class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoadingScreenState createState() => _LoadingScreenState();
 }
 

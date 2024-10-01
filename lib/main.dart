@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:soulscribe/pages/home/home.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'constants/routes.dart';
 import 'main_controller.dart';
@@ -10,6 +11,7 @@ void main() {
   runApp(SoulScript());
 }
 
+// ignore: must_be_immutable
 class SoulScript extends StatelessWidget {
   SoulScript({super.key});
   MainController mainController = Get.put(MainController());
@@ -25,8 +27,8 @@ class SoulScript extends StatelessWidget {
       ),
       initialRoute: initRoute,
       routes: {
-        loading_route: (context) => LoadingScreen(),
-        // home_route: (context) => HomeScreen(),
+        loading_route: (context) => const LoadingScreen(),
+        home_route: (context) => const HomePage(),
         setup_route: (context) => const SetupScreen(),
         intro_route: (context) => const IntroPage(),
       },

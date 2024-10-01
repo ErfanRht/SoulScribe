@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CopyRightWidget extends StatelessWidget {
-  const CopyRightWidget({super.key});
+  final Color color;
+  final Color nameColor;
+  const CopyRightWidget(
+      {super.key, required this.color, required this.nameColor});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +20,14 @@ class CopyRightWidget extends StatelessWidget {
               Text(
                 'Copyright ©2024 All rights reserved',
                 style: GoogleFonts.rubik(
-                    color: Colors.grey,
-                    fontSize: 12.5,
-                    fontWeight: FontWeight.w700),
+                    color: color, fontSize: 12.5, fontWeight: FontWeight.w700),
               ),
               Row(
                 children: [
                   Text(
                     'This site is developed by ',
                     style: GoogleFonts.rubik(
-                        color: Colors.grey,
+                        color: color,
                         fontSize: 12.5,
                         fontWeight: FontWeight.w700),
                   ),
@@ -37,7 +38,7 @@ class CopyRightWidget extends StatelessWidget {
                     child: Text(
                       ' Erfan Rahmati ',
                       style: GoogleFonts.rubik(
-                          color: const Color(0xffE11A38),
+                          color: nameColor,
                           fontSize: 13.0,
                           fontWeight: FontWeight.w800),
                     ),

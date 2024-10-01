@@ -8,19 +8,21 @@ class LoginButton extends StatelessWidget {
   final Color textColor;
   final String text;
   final Widget image;
+  final VoidCallback onTap;
   const LoginButton(
       {super.key,
       required this.image,
       required this.insideColor,
       required this.outsideColor,
       required this.text,
-      required this.textColor});
+      required this.textColor,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           width: MediaQuery.of(context).size.width - 75,
           height: 50,

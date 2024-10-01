@@ -4,8 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/login/animations.dart';
 import 'package:soulscribe/pages/login/components/login_button.dart';
+import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/widgets/copyright.dart';
-import 'components/circles_background.dart';
+import 'package:soulscribe/widgets/page_transition/src/enum.dart';
+import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
+import '../../widgets/circles_background.dart';
 import 'components/main_text_field.dart';
 import 'components/scrollable_form.dart';
 
@@ -76,52 +79,71 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(
                             height: 200,
                           ),
-                          const LoginButton(
+                          LoginButton(
                             text: "Continue with email",
                             textColor: Colors.white,
                             outsideColor: kSecondaryColor,
                             insideColor: kSecondaryColor,
-                            image: SizedBox(),
+                            image: const SizedBox(),
+                            onTap: () {},
                           ),
                           const SizedBox(
                             height: 20,
                           ),
                           LoginButton(
-                              image: Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Image.asset("assets/images/google.png"),
-                              ),
-                              text: "Continue with Google",
-                              textColor: kPrimaryColor,
-                              outsideColor: kPrimaryColor,
-                              insideColor: Colors.white),
+                            image: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Image.asset("assets/images/google.png"),
+                            ),
+                            text: "Continue with Google",
+                            textColor: kPrimaryColor,
+                            outsideColor: kPrimaryColor,
+                            insideColor: Colors.white,
+                            onTap: () {},
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
                           LoginButton(
-                              image: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset(
-                                  "assets/images/apple.png",
-                                ),
+                            image: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Image.asset(
+                                "assets/images/apple.png",
                               ),
-                              text: "Continue with Apple",
-                              textColor: kPrimaryColor,
-                              outsideColor: kPrimaryColor,
-                              insideColor: Colors.white),
+                            ),
+                            text: "Continue with Apple",
+                            textColor: kPrimaryColor,
+                            outsideColor: kPrimaryColor,
+                            insideColor: Colors.white,
+                            onTap: () {},
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
-                          const LoginButton(
-                              image: SizedBox(),
-                              text: "Continue as a guest",
-                              textColor: Colors.white,
-                              outsideColor: kPrimaryColor,
-                              insideColor: kPrimaryColor),
+                          LoginButton(
+                            image: const SizedBox(),
+                            text: "Continue as a guest",
+                            textColor: Colors.white,
+                            outsideColor: kPrimaryColor,
+                            insideColor: kPrimaryColor,
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      duration:
+                                          const Duration(milliseconds: 150),
+                                      childCurrent: const LoginScreen(),
+                                      type: PageTransitionType.fade,
+                                      child: const SetupScreen()));
+                            },
+                          ),
                           const SizedBox(
                             height: 150,
                           ),
-                          const CopyRightWidget(),
+                          const CopyRightWidget(
+                            color: Colors.grey,
+                            nameColor: kSecondaryColor,
+                          ),
                           // _form(node, context),
                         ],
                       ),

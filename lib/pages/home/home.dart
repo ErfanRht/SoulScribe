@@ -23,7 +23,6 @@ class _MyHomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF5F5F5),
-      // appBar: AppBar(title: const Text("")),
       bottomNavigationBar: BottomBarDoubleBullet(
         bubbleSize: 12.5,
         color: kSecondaryColor,

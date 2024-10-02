@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class NewEntryMoodPicker extends StatelessWidget {
+  const NewEntryMoodPicker({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(17.5),
+          color: const Color(0xffFFD700)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            Icons.mood_rounded,
+            size: 27.5,
+            color: Colors.white,
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(
+            "Mood",
+            style: GoogleFonts.ubuntu(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 17.5),
+          )
+        ],
+      ),
+    );
+  }
+}

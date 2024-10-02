@@ -1,6 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:soulscribe/constants/colors.dart';
+import 'package:soulscribe/pages/home/home.dart';
+import 'package:soulscribe/pages/new_entry/new-entry.dart';
+import 'package:soulscribe/widgets/page_transition/src/enum.dart';
+import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
 import '../bottom_bar_item.dart';
 import 'bottom_bar_double_bullet_icon.dart';
 import 'dart:math' as math;
@@ -225,7 +229,15 @@ class _BottomBarDoubleBulletState extends State<BottomBarDoubleBullet>
                 child: InkWell(
                   customBorder: const CircleBorder(),
                   onTap: () {
-                    // onItemPressed(1);
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            duration: const Duration(milliseconds: 350),
+                            childCurrent: const HomePage(),
+                            type: PageTransitionType.scale,
+                            fullscreenDialog: true,
+                            alignment: Alignment.bottomCenter,
+                            child: const NewEntryPage()));
                   },
                   child: Container(
                     decoration: BoxDecoration(

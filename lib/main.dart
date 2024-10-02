@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/home/home.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/constants/routes.dart';
@@ -22,7 +23,6 @@ class SoulScript extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SoulScript',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       initialRoute: initRoute,
@@ -32,7 +32,6 @@ class SoulScript extends StatelessWidget {
         setup_route: (context) => const SetupScreen(),
         intro_route: (context) => const IntroPage(),
       },
-      home: const IntroPage(),
     );
   }
 }

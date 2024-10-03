@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/home/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
@@ -17,6 +18,18 @@ class _MyHomePageState extends State<HomePage> {
   @override
   void dispose() {
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            Color(0xffF5F5F5), // Bottom navigation bar color
+        systemNavigationBarIconBrightness: Brightness.dark, // Icon color
+      ),
+    );
   }
 
   @override

@@ -233,11 +233,12 @@ class _BottomBarDoubleBulletState extends State<BottomBarDoubleBullet>
                         context,
                         PageTransition(
                             duration: const Duration(milliseconds: 350),
+                            reverseDuration: const Duration(milliseconds: 350),
                             childCurrent: const HomePage(),
                             type: PageTransitionType.scale,
                             fullscreenDialog: true,
                             alignment: Alignment.bottomCenter,
-                            child: const NewEntryPage()));
+                            child: NewEntryPage()));
                   },
                   child: Container(
                     decoration: BoxDecoration(

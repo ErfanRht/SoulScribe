@@ -1,7 +1,9 @@
 // ignore_for_file: no_wildcard_variable_uses, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/routes.dart';
 import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/models/user/user-name.dart';
@@ -27,6 +29,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            kSecondaryColor, // Bottom navigation bar color
+        systemNavigationBarIconBrightness: Brightness.dark, // Icon color
+      ),
+    );
     startLoadingAnimations();
     load();
   }

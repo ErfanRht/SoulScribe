@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:soulscribe/pages/home/bottom_bar/utils/app_utils.dart';
+import 'package:soulscribe/pages/main/bottom_bar/utils/app_utils.dart';
 
 class RippleAnimationWidget extends StatelessWidget {
   const RippleAnimationWidget({

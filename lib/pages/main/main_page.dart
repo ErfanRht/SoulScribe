@@ -2,23 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/pages/home/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
-import 'package:soulscribe/pages/home/bottom_bar/bottom_bar_item.dart';
+import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
+import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_item.dart';
+import 'package:soulscribe/pages/main/pages/home/home.dart';
+import 'package:soulscribe/pages/main/pages/quotes/quotes.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<HomePage> createState() => _MyHomePageState();
+  State<MainPage> createState() => MainPageState();
 }
 
-class _MyHomePageState extends State<HomePage> {
-  final PageController controller = PageController();
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
+class MainPageState extends State<MainPage> {
+  final PageController pageController = PageController();
 
   @override
   void initState() {
@@ -26,7 +23,7 @@ class _MyHomePageState extends State<HomePage> {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         systemNavigationBarColor:
-            Color(0xffF5F5F5), // Bottom navigation bar color
+            Color(0xffEDF3FA), // Bottom navigation bar color
         systemNavigationBarIconBrightness: Brightness.dark, // Icon color
       ),
     );
@@ -35,7 +32,7 @@ class _MyHomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5F5),
+      backgroundColor: const Color(0xffEDF3FA),
       bottomNavigationBar: BottomBarDoubleBullet(
         bubbleSize: 12.5,
         color: kSecondaryColor,
@@ -44,41 +41,34 @@ class _MyHomePageState extends State<HomePage> {
         items: [
           BottomBarItem(
             iconData: Icons.home_rounded,
-            // label: 'Home',
           ),
           BottomBarItem(
             iconData: Icons.format_quote_rounded,
-            // label: 'Chat',
           ),
           BottomBarItem(
             iconData: Icons.notifications,
-            // label: 'Notification',
           ),
           BottomBarItem(
             iconData: Icons.calendar_month,
-            // label: 'Calendar',
           ),
           BottomBarItem(
             iconData: Icons.settings,
-            // label: 'Setting',
           ),
         ],
         onSelect: (index) {
-          // implement your select function here
+          pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.decelerate);
         },
       ),
       body: PageView(
-        controller: controller,
+        controller: pageController,
         children: const <Widget>[
+          HomePage(),
+          QuotesPage(),
           Center(
-            child: Text('First Page'),
-          ),
-          Center(
-            child: Text('Second Page'),
-          ),
-          Center(
-            child: Text('Third Page'),
-          ),
+              //child: Text('Third Page'),
+              ),
           Center(
             child: Text('Four Page'),
           ),

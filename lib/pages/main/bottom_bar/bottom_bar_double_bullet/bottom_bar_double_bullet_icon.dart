@@ -5,11 +5,11 @@ import '../components/colors.dart';
 
 class BottomBarDoubleBulletIcon extends StatefulWidget {
   const BottomBarDoubleBulletIcon({
-    Key? key,
+    super.key,
     required this.item,
     required this.color,
     this.isSelected = false,
-  }) : super(key: key);
+  });
 
   final BottomBarItem item;
   final Color color;
@@ -102,8 +102,33 @@ class BottomBarDoubleBulletIconState extends State<BottomBarDoubleBulletIcon>
           padding: const EdgeInsets.all(10),
           child: widget.item.iconBuilder!.call(color));
     } else {
-      return Icon(widget.item.iconData!,
-          size: widget.item.iconSize, color: color);
+      return Padding(
+        padding: const EdgeInsets.all(10),
+        child: Stack(
+          children: [
+            // The shadow using a Container with BoxDecoration
+            Container(
+              width: widget.item.iconSize,
+              height: widget.item.iconSize,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: [
+                  BoxShadow(
+                    color: color
+                        .withOpacity(0.2), // Shadow color with some opacity
+                    blurRadius: 6.0, // Spread of the shadow
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              widget.item.iconData!,
+              size: widget.item.iconSize,
+              color: color,
+            ),
+          ],
+        ),
+      );
     }
   }
 

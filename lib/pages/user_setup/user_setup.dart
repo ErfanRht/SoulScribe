@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/widgets/circles_background.dart';
+import 'package:soulscribe/widgets/circles_background/intro_circles_background.dart';
 import 'components/button.dart';
 import 'components/name.dart';
 import 'components/text.dart';
@@ -11,7 +11,7 @@ class SetupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        body: CirclesBackground(
+        body: IntroCirclesBackground(
       backgroundColor: Colors.white,
       topMediumCircleColor: kSecondaryColor,
       topRightCircleColor: kPrimaryColor,

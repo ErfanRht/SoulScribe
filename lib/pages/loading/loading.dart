@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/routes.dart';
 import 'package:soulscribe/main_controller.dart';
+import 'package:soulscribe/models/user/entries.dart';
 import 'package:soulscribe/models/user/user-name.dart';
 import 'package:soulscribe/widgets/copyright.dart';
 
@@ -37,6 +38,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       ),
     );
     startLoadingAnimations();
+    getEntries();
     load();
   }
 
@@ -88,14 +90,20 @@ class _LoadingScreenState extends State<LoadingScreen> {
         isFirstEnter = !response;
         if (isFirstEnter) {
           nextRoute = intro_route;
+          if (Get.find<MainController>().entires.isEmpty) {
+            addEntry(
+                title: "A New Beginning",
+                content:
+                    "Today, I’ve decided to start journaling. I’ve always wanted a space to capture my thoughts, and SoulScript feels like the perfect tool for it. Right now, I’m feeling a mix of excitement and curiosity—wondering what kind of stories, emotions, and reflections this journal will hold in the future. I’m not sure where this journey will lead, but I’m ready to explore, reflect, and grow. Here’s to new beginnings!",
+                dateTime: DateTime.now());
+            print("New Entry Automatically added.");
+          }
         } else {
-          // getTasks();
           getUserName().then((response) {
             Get.find<MainController>().updateMainStete(
               newUserName: response,
             );
           });
-          // getUserEmail();
 
           nextRoute = home_route;
         }

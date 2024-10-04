@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:soulscribe/pages/login/animations.dart';
 
-class CirclesBackground extends StatelessWidget {
+class IntroCirclesBackground extends StatelessWidget {
   final Widget child;
   final Color backgroundColor;
   final Color topMediumCircleColor;
   final Color topRightCircleColor;
 
-  const CirclesBackground({
+  const IntroCirclesBackground({
     super.key,
     required this.child,
     required this.backgroundColor,

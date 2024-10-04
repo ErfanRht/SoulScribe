@@ -35,11 +35,12 @@ class NewEntrySaveButton extends StatelessWidget {
             SystemChrome.setSystemUIOverlayStyle(
               const SystemUiOverlayStyle(
                 systemNavigationBarColor:
-                    Color(0xffF5F5F5), // Bottom navigation bar color
+                    Color(0xffEDF3FA), // Bottom navigation bar color
                 systemNavigationBarIconBrightness:
                     Brightness.dark, // Icon color
               ),
             );
+
             Navigator.pop(context);
           } else {
             await Future.delayed(const Duration(milliseconds: 500));

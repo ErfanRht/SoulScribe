@@ -8,7 +8,7 @@ import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/widgets/copyright.dart';
 import 'package:soulscribe/widgets/page_transition/src/enum.dart';
 import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
-import '../../widgets/circles_background.dart';
+import '../../widgets/circles_background/intro_circles_background.dart';
 import 'components/main_text_field.dart';
 import 'components/scrollable_form.dart';
 
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
     startAnimations();
     return GetBuilder<LoginPageAnimationsController>(builder: (_) {
       return Scaffold(
-        body: CirclesBackground(
+        body: IntroCirclesBackground(
           backgroundColor: Colors.white,
           topMediumCircleColor: kSecondaryColor,
           topRightCircleColor: kPrimaryColor,

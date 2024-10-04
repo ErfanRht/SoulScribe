@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/pages/home/home.dart';
+import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/constants/routes.dart';
 import 'package:soulscribe/main_controller.dart';
@@ -28,7 +28,7 @@ class SoulScript extends StatelessWidget {
       initialRoute: initRoute,
       routes: {
         loading_route: (context) => const LoadingScreen(),
-        home_route: (context) => const HomePage(),
+        home_route: (context) => const MainPage(),
         setup_route: (context) => const SetupScreen(),
         intro_route: (context) => const IntroPage(),
       },

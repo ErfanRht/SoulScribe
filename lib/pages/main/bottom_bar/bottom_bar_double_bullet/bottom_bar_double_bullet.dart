@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/pages/home/home.dart';
+import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/new_entry/new-entry.dart';
 import 'package:soulscribe/widgets/page_transition/src/enum.dart';
 import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
@@ -234,7 +234,7 @@ class _BottomBarDoubleBulletState extends State<BottomBarDoubleBullet>
                         PageTransition(
                             duration: const Duration(milliseconds: 350),
                             reverseDuration: const Duration(milliseconds: 350),
-                            childCurrent: const HomePage(),
+                            childCurrent: const MainPage(),
                             type: PageTransitionType.scale,
                             fullscreenDialog: true,
                             alignment: Alignment.bottomCenter,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soulscribe/pages/home/bottom_bar/components/colors.dart';
+import 'package:soulscribe/pages/main/bottom_bar/components/colors.dart';
 
 decorOnlySolid({Color? color, double? radius}) => BoxDecoration(
     borderRadius: BorderRadius.circular(radius ?? 10), color: color);

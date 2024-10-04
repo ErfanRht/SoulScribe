@@ -36,7 +36,7 @@ class NewEntryPage extends StatelessWidget {
               SystemChrome.setSystemUIOverlayStyle(
                 const SystemUiOverlayStyle(
                   systemNavigationBarColor:
-                      Color(0xffF5F5F5), // Bottom navigation bar color
+                      Color(0xffEDF3FA), // Bottom navigation bar color
                   systemNavigationBarIconBrightness:
                       Brightness.dark, // Icon color
                 ),
@@ -48,7 +48,7 @@ class NewEntryPage extends StatelessWidget {
             SystemChrome.setSystemUIOverlayStyle(
               const SystemUiOverlayStyle(
                 systemNavigationBarColor:
-                    Color(0xffF5F5F5), // Bottom navigation bar color
+                    Color(0xffEDF3FA), // Bottom navigation bar color
                 systemNavigationBarIconBrightness:
                     Brightness.dark, // Icon color
               ),

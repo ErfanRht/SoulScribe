@@ -237,6 +237,7 @@ class _BottomBarDoubleBulletState extends State<BottomBarDoubleBullet>
                             childCurrent: const MainPage(),
                             type: PageTransitionType.scale,
                             fullscreenDialog: true,
+                            maintainStateData: false,
                             alignment: Alignment.bottomCenter,
                             child: NewEntryPage()));
                   },

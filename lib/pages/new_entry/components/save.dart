@@ -12,49 +12,110 @@ class NewEntrySaveButton extends StatelessWidget {
 
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
+  final RoundedLoadingButtonController _btnController2 =
+      RoundedLoadingButtonController();
   @override
   Widget build(BuildContext context) {
     return GetBuilder<NewEntryController>(builder: (_) {
-      return RoundedLoadingButton(
-        height: 55,
-        width: MediaQuery.of(context).size.width,
-        color: kPrimaryColor,
-        successColor: Colors.greenAccent,
-        errorColor: kSecondaryColor,
-        controller: _btnController,
-        onPressed: () async {
-          if (_.titleController.text != "" && _.journalController.text != "") {
-            await Future.delayed(const Duration(milliseconds: 500));
-            _btnController.success();
-            addEntry(
-                title: _.titleController.text,
-                content: _.journalController.text,
-                dateTime: _.dateTime);
-            await Future.delayed(const Duration(milliseconds: 1250));
-            Get.delete<NewEntryController>();
-            SystemChrome.setSystemUIOverlayStyle(
-              const SystemUiOverlayStyle(
-                systemNavigationBarColor:
-                    Color(0xffEDF3FA), // Bottom navigation bar color
-                systemNavigationBarIconBrightness:
-                    Brightness.dark, // Icon color
-              ),
-            );
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _.isEdit
+              ? RoundedLoadingButton(
+                  height: 55,
+                  width: !_.isEdit
+                      ? MediaQuery.of(context).size.width - 50
+                      : (MediaQuery.of(context).size.width / 2) - 50,
+                  color: kSecondaryColor,
+                  successColor: Colors.greenAccent,
+                  errorColor: kSecondaryColor,
+                  controller: _btnController2,
+                  onPressed: () async {
+                    if (_.titleController.text != "" &&
+                        _.journalController.text != "") {
+                      await Future.delayed(const Duration(milliseconds: 500));
+                      removeEntry(index: _.id);
+                      _btnController2.success();
 
-            Navigator.pop(context);
-          } else {
-            await Future.delayed(const Duration(milliseconds: 500));
-            _btnController.error();
-            await Future.delayed(const Duration(milliseconds: 2250));
-            _btnController.reset();
-          }
-        },
-        valueColor: Colors.white,
-        child: Text('Save',
-            style: GoogleFonts.ubuntu(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w700)),
+                      await Future.delayed(const Duration(milliseconds: 1250));
+                      Get.delete<NewEntryController>();
+                      SystemChrome.setSystemUIOverlayStyle(
+                        const SystemUiOverlayStyle(
+                          systemNavigationBarColor:
+                              Color(0xffEDF3FA), // Bottom navigation bar color
+                          systemNavigationBarIconBrightness:
+                              Brightness.dark, // Icon color
+                        ),
+                      );
+
+                      Navigator.pop(context);
+                    } else {
+                      await Future.delayed(const Duration(milliseconds: 500));
+                      _btnController2.error();
+                      await Future.delayed(const Duration(milliseconds: 2250));
+                      _btnController2.reset();
+                    }
+                  },
+                  valueColor: Colors.white,
+                  child: Text('Delete',
+                      style: GoogleFonts.ubuntu(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700)),
+                )
+              : const SizedBox(),
+          SizedBox(
+            width: _.isEdit ? 15 : 0,
+          ),
+          RoundedLoadingButton(
+            height: 55,
+            width: !_.isEdit
+                ? MediaQuery.of(context).size.width - 50
+                : (MediaQuery.of(context).size.width / 2) - 50,
+            color: kPrimaryColor,
+            successColor: Colors.greenAccent,
+            errorColor: kSecondaryColor,
+            controller: _btnController,
+            onPressed: () async {
+              if (_.titleController.text != "" &&
+                  _.journalController.text != "") {
+                await Future.delayed(const Duration(milliseconds: 500));
+                if (_.isEdit) {
+                  removeEntry(index: _.id);
+                }
+                addEntry(
+                    title: _.titleController.text,
+                    content: _.journalController.text,
+                    dateTime: _.dateTime);
+                _btnController.success();
+
+                await Future.delayed(const Duration(milliseconds: 1250));
+                Get.delete<NewEntryController>();
+                SystemChrome.setSystemUIOverlayStyle(
+                  const SystemUiOverlayStyle(
+                    systemNavigationBarColor:
+                        Color(0xffEDF3FA), // Bottom navigation bar color
+                    systemNavigationBarIconBrightness:
+                        Brightness.dark, // Icon color
+                  ),
+                );
+
+                Navigator.pop(context);
+              } else {
+                await Future.delayed(const Duration(milliseconds: 500));
+                _btnController.error();
+                await Future.delayed(const Duration(milliseconds: 2250));
+                _btnController.reset();
+              }
+            },
+            valueColor: Colors.white,
+            child: Text('Save',
+                style: GoogleFonts.ubuntu(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700)),
+          ),
+        ],
       );
     });
   }

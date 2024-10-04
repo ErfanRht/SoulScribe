@@ -2,12 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:soulscribe/main_controller.dart';
+import 'package:soulscribe/pages/new_entry/controller.dart';
 
 Future<bool> getEntries() async {
   try {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List entries = prefs.getStringList('entries') ?? [];
-    entries = entries.map((e) => e.split("&&+-+-&&")).toList();
+    int idCounter = 1;
+    entries = entries.map((e) {
+      List<String> entryParts = e.split("&&+-+-&&");
+      entryParts.add(idCounter.toString());
+      idCounter++;
+      return entryParts;
+    }).toList();
     Get.find<MainController>().updateMainStete(newEntries: entries);
     List<String> entriesDate = [];
     List<List<String>> entriesDate2 = [];
@@ -20,6 +27,7 @@ Future<bool> getEntries() async {
     for (int i = 0; i < entriesDate2.length; i++) {
       entriesDate2[i].add(dateDifference(entriesDate2[i]).toString());
     }
+    print(entries);
     entriesDate2.sort((a, b) => int.parse(a[3]).compareTo(int.parse(b[3])));
     Get.find<MainController>().updateMainStete(newEntriesDates: entriesDate2);
     return true;
@@ -34,7 +42,6 @@ Future<bool> addEntry(
     required String content,
     required DateTime dateTime}) async {
   try {
-    print(title);
     if (title == "" || content == "") {
       return false;
     } else {
@@ -55,9 +62,7 @@ Future<bool> addEntry(
 
 Future<List<List<String>>> eachDayGetEntries(String date) async {
   List<List<String>> dayEntries = [];
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  List entries = prefs.getStringList('entries') ?? [];
-  entries = entries.map((e) => e.split("&&+-+-&&")).toList();
+  List entries = Get.find<MainController>().entires;
   for (int i = 0; i < entries.length; i++) {
     if (entries[i][2] == date) {
       dayEntries.add(entries[i]);
@@ -91,18 +96,28 @@ dateDifference(List<String> date) {
 //   }
 // }
 
-// Future<bool> removeTask({@required int index}) async {
-//   try {
-//     SharedPreferences prefs = await SharedPreferences.getInstance();
-//     List<String> tasks = prefs.getStringList('tasks') ?? [];
-//     tasks.removeAt(index);
-//     prefs.setStringList('tasks', tasks);
-//     getTasks();
-//     return true;
-//   } catch (e) {
-//     return false;
-//   }
-// }
+Future<bool> removeEntry({required String index}) async {
+  try {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> finalEntries = [];
+    List entries = Get.find<MainController>().entires;
+
+    entries.removeAt(int.parse(index) - 1);
+    print("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
+    finalEntries = entries.map((e) {
+      List<String> entryParts = e;
+      entryParts.removeLast();
+      return entryParts.join("&&+-+-&&");
+    }).toList();
+    prefs.setStringList('entries', finalEntries);
+    getEntries();
+    return true;
+  } catch (e) {
+    print(e);
+    return false;
+  }
+}
 
 // Future<bool> removeAllTasks() async {
 //   try {

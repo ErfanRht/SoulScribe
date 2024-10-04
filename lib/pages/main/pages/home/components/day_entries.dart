@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/models/user/entries.dart';
+import 'package:soulscribe/pages/main/main_page.dart';
+import 'package:soulscribe/pages/new_entry/controller.dart';
+import 'package:soulscribe/pages/new_entry/new-entry.dart';
+import 'package:soulscribe/widgets/page_transition/page_transition.dart';
 
 class HomePageEachDayEntries extends StatefulWidget {
   const HomePageEachDayEntries({super.key, required this.datetime});
@@ -35,45 +40,71 @@ class _HomePageEachDayEntriesState extends State<HomePageEachDayEntries> {
             child: AnimatedPadding(
               duration: const Duration(milliseconds: 550),
               padding: EdgeInsets.only(bottom: padding),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                padding: const EdgeInsets.all(17.5),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(
-                      entries[index][1].length > 75 ? 17.5 : 15),
-                  boxShadow: [
-                    BoxShadow(
-                        color: kPrimaryColor.withOpacity(0.25),
-                        spreadRadius: 0,
-                        blurRadius: 12.5,
-                        offset: const Offset(0, 15)),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      entries[index][0],
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold,
-                          color: kSecondaryColor,
-                          fontSize: 20),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      shortText(entries[index][1]),
-                      maxLines: 10,
-                      overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold,
-                          color: kPrimaryColor,
-                          fontSize: 15),
-                    )
-                  ],
+              child: InkWell(
+                onTap: () {
+                  Get.put(NewEntryController());
+                  Get.find<NewEntryController>().titleController.text =
+                      entries[index][0];
+                  Get.find<NewEntryController>().journalController.text =
+                      entries[index][1];
+                  Get.find<NewEntryController>().updateNewEntryController(
+                      newDateTime: dateTimeFormatter(
+                          entries[index][2].split("-").toList()),
+                      newJournalCharCount: entries[index][1].length,
+                      newId: entries[index][3],
+                      isBeingEdited: true);
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          duration: const Duration(milliseconds: 350),
+                          reverseDuration: const Duration(milliseconds: 350),
+                          childCurrent: const MainPage(),
+                          type: PageTransitionType.scale,
+                          fullscreenDialog: true,
+                          maintainStateData: false,
+                          alignment: Alignment.bottomCenter,
+                          child: NewEntryPage()));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.all(17.5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(
+                        entries[index][1].length > 75 ? 17.5 : 15),
+                    boxShadow: [
+                      BoxShadow(
+                          color: kPrimaryColor.withOpacity(0.25),
+                          spreadRadius: 0,
+                          blurRadius: 12.5,
+                          offset: const Offset(0, 15)),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        entries[index][0],
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold,
+                            color: kSecondaryColor,
+                            fontSize: 20),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        shortText(entries[index][1]),
+                        maxLines: 10,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold,
+                            color: kPrimaryColor,
+                            fontSize: 15),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

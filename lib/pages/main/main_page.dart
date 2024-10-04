@@ -22,9 +22,10 @@ class MainPageState extends State<MainPage> {
     super.initState();
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor:
-            Color(0xffEDF3FA), // Bottom navigation bar color
-        systemNavigationBarIconBrightness: Brightness.dark, // Icon color
+        systemNavigationBarColor: Color(0xffEDF3FA),
+        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
+        statusBarColor: Colors.transparent,
       ),
     );
   }
@@ -33,47 +34,56 @@ class MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffEDF3FA),
-      bottomNavigationBar: BottomBarDoubleBullet(
-        bubbleSize: 12.5,
-        color: kSecondaryColor,
-        circle1Color: kSecondaryColor,
-        circle2Color: kSecondaryColor,
-        items: [
-          BottomBarItem(
-            iconData: Icons.home_rounded,
-          ),
-          BottomBarItem(
-            iconData: Icons.format_quote_rounded,
-          ),
-          BottomBarItem(
-            iconData: Icons.notifications,
-          ),
-          BottomBarItem(
-            iconData: Icons.calendar_month,
-          ),
-          BottomBarItem(
-            iconData: Icons.settings,
-          ),
-        ],
-        onSelect: (index) {
-          pageController.animateToPage(index,
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.decelerate);
-        },
-      ),
-      body: PageView(
-        controller: pageController,
-        children: const <Widget>[
-          HomePage(),
-          QuotesPage(),
-          Center(
-              //child: Text('Third Page'),
+      body: Stack(
+        children: [
+          PageView(
+            controller: pageController,
+            children: const <Widget>[
+              HomePage(),
+              QuotesPage(),
+              Center(
+                  //child: Text('Third Page'),
+                  ),
+              Center(
+                child: Text('Four Page'),
               ),
-          Center(
-            child: Text('Four Page'),
+              Center(
+                child: Text('Five Page'),
+              ),
+            ],
           ),
-          Center(
-            child: Text('Five Page'),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            left: 0,
+            child: BottomBarDoubleBullet(
+              bubbleSize: 12.5,
+              color: kSecondaryColor,
+              circle1Color: kSecondaryColor,
+              circle2Color: kSecondaryColor,
+              items: [
+                BottomBarItem(
+                  iconData: Icons.home_rounded,
+                ),
+                BottomBarItem(
+                  iconData: Icons.format_quote_rounded,
+                ),
+                BottomBarItem(
+                  iconData: Icons.notifications,
+                ),
+                BottomBarItem(
+                  iconData: Icons.calendar_month,
+                ),
+                BottomBarItem(
+                  iconData: Icons.settings,
+                ),
+              ],
+              onSelect: (index) {
+                pageController.animateToPage(index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.decelerate);
+              },
+            ),
           ),
         ],
       ),

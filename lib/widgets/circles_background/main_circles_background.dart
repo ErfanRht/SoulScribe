@@ -16,7 +16,7 @@ class MainCirclesBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: MediaQuery.of(context).size.height - 200,
+      bottom: MediaQuery.of(context).size.height - 100,
       right: -300,
       left: -300,
       child: Container(

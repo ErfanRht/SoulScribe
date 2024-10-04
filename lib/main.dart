@@ -12,7 +12,6 @@ void main() {
   runApp(SoulScript());
 }
 
-// ignore: must_be_immutable
 class SoulScript extends StatelessWidget {
   SoulScript({super.key});
   MainController mainController = Get.put(MainController());

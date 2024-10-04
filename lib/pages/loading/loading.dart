@@ -32,9 +32,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor:
-            kSecondaryColor, // Bottom navigation bar color
-        systemNavigationBarIconBrightness: Brightness.dark, // Icon color
+        systemNavigationBarColor: kSecondaryColor,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
+        statusBarColor: Colors.transparent,
       ),
     );
     startLoadingAnimations();

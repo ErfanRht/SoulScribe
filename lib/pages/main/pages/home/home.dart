@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/main_controller.dart';
-import 'package:soulscribe/models/user/entries.dart';
+import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/pages/home/components/entries.dart';
 import 'package:soulscribe/pages/main/pages/home/components/entries_error.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               duration: const Duration(milliseconds: 250),
               child: _.entires.isNotEmpty
                   ? Padding(
-                      padding: const EdgeInsets.only(top: 75),
+                      padding: const EdgeInsets.symmetric(vertical: 70),
                       child: RefreshIndicator(
                           onRefresh: () async {
                             getEntries();

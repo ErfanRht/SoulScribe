@@ -1,15 +1,14 @@
 // ignore_for_file: no_wildcard_variable_uses, use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/routes.dart';
 import 'package:soulscribe/main_controller.dart';
-import 'package:soulscribe/models/user/entries.dart';
+import 'package:soulscribe/models/quotes.dart';
+import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/models/user/user-name.dart';
 import 'package:soulscribe/widgets/copyright.dart';
-
 import 'animations.dart';
 import 'components/logo.dart';
 import 'components/spinkit.dart';
@@ -40,6 +39,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     );
     startLoadingAnimations();
     getEntries();
+    fetchQuotes(null);
     load();
   }
 
@@ -113,7 +113,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   pass() async {
-    await Future.delayed(loadingAnimationsController.allAnimationTimes);
+    // await Future.delayed(const Duration(milliseconds: 6000));
     Navigator.pushReplacementNamed(context, nextRoute);
   }
 }

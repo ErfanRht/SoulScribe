@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/models/user/entries.dart';
+import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
 import 'package:soulscribe/pages/new_entry/new-entry.dart';

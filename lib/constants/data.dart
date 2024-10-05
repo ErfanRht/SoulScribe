@@ -22,3 +22,26 @@ List<String> days = [
   "Saturday",
   "Sunday"
 ];
+
+List<String> quotableApiTagsWithMoreThan9Quotes = [
+  "Business",
+  "Change",
+  "Character",
+  "Competition",
+  "Famous Quotes",
+  "Film",
+  "Friendship",
+  "Future",
+  "Happiness",
+  "History",
+  "Humorous",
+  "Inspirational",
+  "Life",
+  "Love",
+  "Motivational",
+  "Sports",
+  "Success",
+  "Technology",
+  "Virtue",
+  "Wisdom"
+];

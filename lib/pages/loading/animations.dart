@@ -25,7 +25,7 @@ startLoadingAnimations() async {
   await Future.delayed(const Duration(milliseconds: 500));
   Get.find<LoadingAnimationsController>().updateLoadingAnimations(
       newLogoOpacity: 1, newLogoTextPadding: EdgeInsets.zero);
-  await Future.delayed(const Duration(milliseconds: 1000));
+  await Future.delayed(const Duration(milliseconds: 100));
   Get.find<LoadingAnimationsController>()
       .updateLoadingAnimations(newTextOpacity: 1);
   await Future.delayed(const Duration(milliseconds: 250));

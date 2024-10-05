@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/data.dart';
 import 'package:soulscribe/main_controller.dart';
-import 'package:soulscribe/models/user/entries.dart';
+import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/pages/home/components/day_entries.dart';
 
 class HomePageEntries extends StatefulWidget {

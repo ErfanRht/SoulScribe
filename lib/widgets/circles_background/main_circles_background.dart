@@ -6,11 +6,15 @@ import 'package:soulscribe/pages/login/animations.dart';
 class MainCirclesBackground extends StatefulWidget {
   final Widget child;
   final Color backgroundColor;
+  final double position;
+  final int duration;
 
   const MainCirclesBackground({
     super.key,
     required this.child,
     required this.backgroundColor,
+    this.position = -900,
+    this.duration = 300,
   });
 
   @override
@@ -29,12 +33,12 @@ class _MainCirclesBackgroundState extends State<MainCirclesBackground> {
   @override
   Widget build(BuildContext context) {
     return AnimatedPositioned(
-      duration: const Duration(milliseconds: 300),
+      duration: Duration(milliseconds: widget.duration),
       top: position,
       right: -300,
       left: -300,
       child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 300),
+        duration: Duration(milliseconds: widget.duration),
         opacity: opacity,
         child: Container(
           width: 1000,
@@ -61,7 +65,7 @@ class _MainCirclesBackgroundState extends State<MainCirclesBackground> {
   loadAnimations() async {
     await Future.delayed(const Duration(milliseconds: 200));
     setState(() {
-      position = -900;
+      position = widget.position;
       opacity = 1;
     });
   }

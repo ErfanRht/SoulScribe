@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/new_entry/new-entry.dart';
@@ -267,8 +268,8 @@ class _BottomBarDoubleBulletState extends State<BottomBarDoubleBullet>
                       child: Transform.rotate(
                         angle: math.pi / 4,
                         child: const Icon(
-                          Icons.add,
-                          size: 32.5,
+                          IconlyBold.edit,
+                          size: 27.5,
                           color: Colors.white,
                         ),
                       ),

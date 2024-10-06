@@ -67,7 +67,7 @@ class _QuoteSettingsState extends State<QuoteSettings> {
           duration: const Duration(milliseconds: 500),
           opacity: reloadButtonOpacity,
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 225),
+            padding: const EdgeInsets.only(bottom: 240),
             child: RoundedLoadingButton(
               height: 55,
               animateOnTap: false,

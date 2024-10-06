@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
@@ -61,11 +63,23 @@ class NewEntrySaveButton extends StatelessWidget {
                     }
                   },
                   valueColor: Colors.white,
-                  child: Text('Delete',
-                      style: GoogleFonts.ubuntu(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        IconlyBold.delete,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text('Delete',
+                          style: GoogleFonts.ubuntu(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700)),
+                    ],
+                  ),
                 )
               : const SizedBox(),
           SizedBox(
@@ -114,11 +128,23 @@ class NewEntrySaveButton extends StatelessWidget {
               }
             },
             valueColor: Colors.white,
-            child: Text('Save',
-                style: GoogleFonts.ubuntu(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Save',
+                    style: GoogleFonts.ubuntu(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700)),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Icon(
+                  FontAwesomeIcons.solidCircleCheck,
+                  color: Colors.white,
+                ),
+              ],
+            ),
           ),
         ],
       );

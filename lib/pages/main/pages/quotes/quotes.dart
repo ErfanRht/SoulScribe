@@ -22,7 +22,7 @@ class QuotesPage extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 42.5),
+                  padding: const EdgeInsets.only(bottom: 27.5),
                   child: Text(
                     "Quotes",
                     textAlign: TextAlign.center,

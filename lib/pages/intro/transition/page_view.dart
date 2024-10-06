@@ -236,10 +236,24 @@ class _Button extends StatelessWidget {
         );
       },
       child: DecoratedBox(
-        decoration: const BoxDecoration(shape: BoxShape.circle),
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+        ),
         child: SizedBox.fromSize(
           size: Size.square(size),
-          child: child,
+          child: ShaderMask(
+            shaderCallback: (Rect bounds) {
+              return const LinearGradient(
+                colors: [
+                  Colors.white,
+                  Colors.white,
+                ],
+              ).createShader(bounds);
+            },
+            blendMode: BlendMode
+                .srcIn, // Ensures the child takes the color of the gradient
+            child: child, // Your actual child widget goes here
+          ),
         ),
       ),
     );

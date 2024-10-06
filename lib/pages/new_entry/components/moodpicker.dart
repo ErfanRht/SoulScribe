@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NewEntryMoodPicker extends StatelessWidget {
@@ -16,8 +17,8 @@ class NewEntryMoodPicker extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(
-            Icons.mood_rounded,
-            size: 27.5,
+            FontAwesomeIcons.solidFaceSmile,
+            size: 22.5,
             color: Colors.white,
           ),
           const SizedBox(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/widgets/snackbar.dart';
@@ -144,7 +146,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                                 WidgetStateProperty.all(
                                                     kPrimaryColor)),
                                         child: const Icon(
-                                          Icons.copy_rounded,
+                                          FontAwesomeIcons.solidCopy,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -163,7 +165,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                                 WidgetStateProperty.all(
                                                     kSecondaryColor)),
                                         child: const Icon(
-                                          Icons.favorite,
+                                          FontAwesomeIcons.heart,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -182,7 +184,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                                 WidgetStateProperty.all(
                                                     kPrimaryColor)),
                                         child: const Icon(
-                                          Icons.share_rounded,
+                                          IconlyBold.send,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -214,9 +216,8 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                               offset: const Offset(0, 5)),
                                         ]),
                                     child: const Icon(
-                                      Icons.format_quote,
+                                      FontAwesomeIcons.quoteRight,
                                       color: Colors.white,
-                                      size: 30,
                                     ),
                                   ),
                                 ),

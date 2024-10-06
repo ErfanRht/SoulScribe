@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/data.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
@@ -57,7 +58,7 @@ class NewEntryDatePicker extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
-                Icons.calendar_month_rounded,
+                IconlyBold.calendar,
                 color: Colors.white,
               ),
               const SizedBox(

@@ -27,7 +27,6 @@ Future<bool> getEntries() async {
     for (int i = 0; i < entriesDate2.length; i++) {
       entriesDate2[i].add(dateDifference(entriesDate2[i]).toString());
     }
-    print(entries);
     entriesDate2.sort((a, b) => int.parse(a[3]).compareTo(int.parse(b[3])));
     Get.find<MainController>().updateMainStete(newEntriesDates: entriesDate2);
     return true;
@@ -49,7 +48,6 @@ Future<bool> addEntry(
       List<String> entries = prefs.getStringList('entries') ?? [];
       entries.add(
           "${title.replaceAll("&&+-+-&&", "")}&&+-+-&&${content.replaceAll("&&+-+-&&", "")}&&+-+-&&${dateTime.year}-${dateTime.month}-${dateTime.day}");
-      print("entries: $entries");
       prefs.setStringList('entries', entries);
       getEntries();
       return true;
@@ -103,7 +101,6 @@ Future<bool> removeEntry({required String index}) async {
     List entries = Get.find<MainController>().entires;
 
     entries.removeAt(int.parse(index) - 1);
-    print("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
     finalEntries = entries.map((e) {
       List<String> entryParts = e;

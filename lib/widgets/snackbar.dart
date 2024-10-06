@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 
 ShowSnackBar(BuildContext context,
@@ -22,7 +24,11 @@ ShowSnackBar(BuildContext context,
       content: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.check_circle_rounded, color: Colors.white),
+          const Icon(
+            FontAwesomeIcons.circleCheck,
+            color: Colors.white,
+            size: 22.5,
+          ),
           const SizedBox(width: 10),
           Text(
             content,

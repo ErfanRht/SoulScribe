@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_item.dart';
@@ -64,19 +64,19 @@ class MainPageState extends State<MainPage> {
               circle2Color: kSecondaryColor,
               items: [
                 BottomBarItem(
-                  iconData: Icons.home_rounded,
+                  iconData: IconlyBold.home,
                 ),
                 BottomBarItem(
-                  iconData: Icons.format_quote_rounded,
+                  iconData: IconlyBold.document,
                 ),
                 BottomBarItem(
                   iconData: Icons.notifications,
                 ),
                 BottomBarItem(
-                  iconData: Icons.calendar_month,
+                  iconData: IconlyBold.activity,
                 ),
                 BottomBarItem(
-                  iconData: Icons.settings,
+                  iconData: IconlyBold.profile,
                 ),
               ],
               onSelect: (index) {

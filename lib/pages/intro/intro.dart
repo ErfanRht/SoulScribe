@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:ms_undraw/ms_undraw.dart';
+import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/login/login.dart';
 import 'package:soulscribe/widgets/page_transition/src/enum.dart';
 import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
@@ -9,7 +11,6 @@ import 'transition/concentric_transition.dart';
 
 final pages = [
   PageData(
-      icon: Icons.bubble_chart,
       title: "Capture Your Journey",
       description:
           "Track your daily thoughts, emotions, and experiences in one place. SoulScribe makes journaling simple and meaningful.",
@@ -26,7 +27,6 @@ final pages = [
               color: Colors.white, borderRadius: BorderRadius.circular(35)),
           child: Image.asset('assets/images/logo.png'))),
   PageData(
-      icon: Icons.format_size,
       title: "Visualize Your Emotions",
       description:
           "Easily track your mood with insightful charts and trends. See how your feelings evolve over time and gain self-awareness.",
@@ -44,7 +44,6 @@ final pages = [
                 100), //optional, default is the Text('Could not load illustration!').
       )),
   PageData(
-      icon: Icons.hdr_weak,
       title: "Look Back and Reflect",
       description:
           "SoulScribe helps you reflect on your personal growth. Review past entries to better understand yourself and your emotional journey.",
@@ -61,7 +60,6 @@ final pages = [
               color: Colors.white, borderRadius: BorderRadius.circular(35)),
           child: Image.asset('assets/images/analyze.png'))),
   PageData(
-      icon: Icons.hdr_weak,
       title: "Your Data, Always Safe",
       description:
           "With cloud integration, your journal entries and mood data are securely stored and easily recoverable. Stay connected and never worry about losing your personal journey.",
@@ -103,10 +101,14 @@ class IntroPage extends StatelessWidget {
             ),
           ),
         radius: screenWidth * 0.1,
-        nextButtonBuilder: (context) => Padding(
+        nextButtonBuilder: (
+          context,
+        ) =>
+            Padding(
           padding: const EdgeInsets.only(left: 0), // visual center
           child: Icon(
-            Icons.arrow_downward_rounded,
+            IconlyBold.arrow_down_square,
+            color: kSecondaryColor.withOpacity(0.75),
             size: screenWidth * 0.08,
           ),
         ),

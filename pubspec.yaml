@@ -50,6 +50,7 @@ dependencies:
   http: ^0.13.6
   typewritertext: ^3.0.9
   awesome_snackbar_content: ^0.1.2
+  iconly: ^1.0.1
 
 dev_dependencies:
   flutter_test:

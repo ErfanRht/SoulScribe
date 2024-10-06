@@ -49,6 +49,7 @@ dependencies:
   flutter_quill: ^10.7.6
   http: ^0.13.6
   typewritertext: ^3.0.9
+  awesome_snackbar_content: ^0.1.2
 
 dev_dependencies:
   flutter_test:

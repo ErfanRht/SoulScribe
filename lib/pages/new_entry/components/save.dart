@@ -6,6 +6,7 @@ import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
 import 'package:soulscribe/widgets/rounded_loading_button.dart';
+import 'package:soulscribe/widgets/snackbar.dart';
 
 class NewEntrySaveButton extends StatelessWidget {
   NewEntrySaveButton({super.key});
@@ -47,7 +48,10 @@ class NewEntrySaveButton extends StatelessWidget {
                               Brightness.dark, // Icon color
                         ),
                       );
-
+                      ShowSnackBar(context,
+                          content: "Journal deleted successfully",
+                          backgroundColor:
+                              const Color(0xFF4CAF50).withOpacity(0.9));
                       Navigator.pop(context);
                     } else {
                       await Future.delayed(const Duration(milliseconds: 500));
@@ -88,7 +92,6 @@ class NewEntrySaveButton extends StatelessWidget {
                     content: _.journalController.text,
                     dateTime: _.dateTime);
                 _btnController.success();
-
                 await Future.delayed(const Duration(milliseconds: 1250));
                 Get.delete<NewEntryController>();
                 SystemChrome.setSystemUIOverlayStyle(
@@ -99,7 +102,9 @@ class NewEntrySaveButton extends StatelessWidget {
                         Brightness.dark, // Icon color
                   ),
                 );
-
+                ShowSnackBar(context,
+                    content: "Changes saved successfully",
+                    backgroundColor: const Color(0xFF4CAF50).withOpacity(0.9));
                 Navigator.pop(context);
               } else {
                 await Future.delayed(const Duration(milliseconds: 500));

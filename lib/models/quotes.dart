@@ -18,7 +18,6 @@ Future<void> fetchQuotes(List<String>? tags) async {
   List<List<String>> quotes = [];
   final response = await http.get(Uri.parse(
       'https://api.quotable.io/quotes/random?tags=${tags.join('|')}&limit=50&maxLength=140'));
-  print(response.statusCode);
 
   if (response.statusCode == 200) {
     var data = jsonDecode(response.body);
@@ -33,6 +32,14 @@ Future<void> fetchQuotes(List<String>? tags) async {
   } else {
     print('Failed to fetch data');
   }
+}
+
+Future<void> reloadQuotes() async {
+  List<List<String>> quotes = Get.find<MainController>().quotes;
+  Get.find<MainController>().updateMainStete(newQuotes: []);
+  await Future.delayed(const Duration(milliseconds: 1500));
+  quotes.shuffle();
+  Get.find<MainController>().updateMainStete(newQuotes: quotes);
 }
 
 class MyHttpOverrides extends HttpOverrides {

@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
+import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/models/entries.dart';
+import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
 import 'package:soulscribe/widgets/rounded_loading_button.dart';
 import 'package:soulscribe/widgets/snackbar.dart';
@@ -54,6 +56,7 @@ class NewEntrySaveButton extends StatelessWidget {
                           content: "Journal deleted successfully",
                           backgroundColor:
                               const Color(0xFF4CAF50).withOpacity(0.9));
+                      newEntryBugFixer();
                       Navigator.pop(context);
                     } else {
                       await Future.delayed(const Duration(milliseconds: 500));
@@ -119,6 +122,7 @@ class NewEntrySaveButton extends StatelessWidget {
                 ShowSnackBar(context,
                     content: "Changes saved successfully",
                     backgroundColor: const Color(0xFF4CAF50).withOpacity(0.9));
+                newEntryBugFixer();
                 Navigator.pop(context);
               } else {
                 await Future.delayed(const Duration(milliseconds: 500));
@@ -149,5 +153,15 @@ class NewEntrySaveButton extends StatelessWidget {
         ],
       );
     });
+  }
+}
+
+newEntryBugFixer() async {
+  final int currentIndex = MainPage.pageController.page?.round() ?? 0;
+  if (currentIndex == 0) {
+    await MainPage.pageController.animateToPage(1,
+        duration: const Duration(milliseconds: 5), curve: Curves.easeIn);
+    await MainPage.pageController.animateToPage(0,
+        duration: const Duration(milliseconds: 5), curve: Curves.easeIn);
   }
 }

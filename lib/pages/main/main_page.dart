@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
+import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_item.dart';
 import 'package:soulscribe/pages/main/pages/home/home.dart';
 import 'package:soulscribe/pages/main/pages/quotes/quotes.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends StatelessWidget {
   const MainPage({super.key});
+  static final PageController pageController = PageController();
 
   @override
-  State<MainPage> createState() => MainPageState();
-}
-
-class MainPageState extends State<MainPage> {
-  final PageController pageController = PageController();
-
-  @override
-  void initState() {
-    super.initState();
+  Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         systemNavigationBarColor: Color(0xffEDF3FA),
@@ -28,10 +23,6 @@ class MainPageState extends State<MainPage> {
         statusBarColor: Colors.transparent,
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffEDF3FA),
       body: Stack(

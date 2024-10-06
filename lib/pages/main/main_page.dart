@@ -6,8 +6,10 @@ import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_item.dart';
+import 'package:soulscribe/pages/main/pages/activity/activity.dart';
 import 'package:soulscribe/pages/main/pages/home/home.dart';
 import 'package:soulscribe/pages/main/pages/quotes/quotes.dart';
+import 'package:soulscribe/pages/main/pages/settings/settings.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -33,15 +35,9 @@ class MainPage extends StatelessWidget {
             children: const <Widget>[
               HomePage(),
               QuotesPage(),
-              Center(
-                  //child: Text('Third Page'),
-                  ),
-              Center(
-                child: Text('Four Page'),
-              ),
-              Center(
-                child: Text('Five Page'),
-              ),
+              SizedBox(),
+              ActivityPage(),
+              SettingsPage()
             ],
           ),
           Positioned(
@@ -53,6 +49,7 @@ class MainPage extends StatelessWidget {
               color: kSecondaryColor,
               circle1Color: kSecondaryColor,
               circle2Color: kSecondaryColor,
+              selectedIndex: 0,
               items: [
                 BottomBarItem(
                   iconData: IconlyBold.home,

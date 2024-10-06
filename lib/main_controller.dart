@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
+  final PageController pageController = PageController();
+  int lastPage = 0;
   List entires = [];
   List<List<String>> entriesDates = [];
   List<List<String>> quotes = [];

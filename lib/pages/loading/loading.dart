@@ -113,7 +113,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   pass() async {
-    // await Future.delayed(const Duration(milliseconds: 6000));
+    await Future.delayed(const Duration(milliseconds: 2000));
     Navigator.pushReplacementNamed(context, nextRoute);
   }
 }

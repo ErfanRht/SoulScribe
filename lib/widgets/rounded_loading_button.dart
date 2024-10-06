@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:soulscribe/constants/colors.dart';
 
 /// States that your button can assume via the controller
 // ignore: public_member_api_docs
@@ -88,7 +89,7 @@ class RoundedLoadingButton extends StatefulWidget {
 
   /// initialize constructor
   const RoundedLoadingButton({
-    Key? key,
+    super.key,
     required this.controller,
     required this.onPressed,
     required this.child,
@@ -98,7 +99,7 @@ class RoundedLoadingButton extends StatefulWidget {
     this.loaderSize = 24.0,
     this.loaderStrokeWidth = 2.0,
     this.animateOnTap = true,
-    this.valueColor = Colors.white,
+    this.valueColor = kWhiteColor,
     this.borderRadius = 35,
     this.elevation = 2,
     this.duration = const Duration(milliseconds: 500),
@@ -112,7 +113,7 @@ class RoundedLoadingButton extends StatefulWidget {
     this.completionCurve = Curves.elasticOut,
     this.completionDuration = const Duration(milliseconds: 1000),
     this.disabledColor,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => RoundedLoadingButtonState();
@@ -135,7 +136,7 @@ class RoundedLoadingButtonState extends State<RoundedLoadingButton>
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    Widget _check = Container(
+    Widget check = Container(
       alignment: FractionalOffset.center,
       decoration: BoxDecoration(
         color: widget.successColor ?? theme.primaryColor,
@@ -152,7 +153,7 @@ class RoundedLoadingButtonState extends State<RoundedLoadingButton>
           : null,
     );
 
-    Widget _cross = Container(
+    Widget cross = Container(
       alignment: FractionalOffset.center,
       decoration: BoxDecoration(
         color: widget.errorColor,
@@ -169,7 +170,7 @@ class RoundedLoadingButtonState extends State<RoundedLoadingButton>
           : null,
     );
 
-    Widget _loader = SizedBox(
+    Widget loader = SizedBox(
       height: widget.loaderSize,
       width: widget.loaderSize,
       child: CircularProgressIndicator(
@@ -183,12 +184,12 @@ class RoundedLoadingButtonState extends State<RoundedLoadingButton>
       builder: (context, snapshot) {
         return AnimatedSwitcher(
           duration: const Duration(milliseconds: 200),
-          child: snapshot.data == ButtonState.loading ? _loader : widget.child,
+          child: snapshot.data == ButtonState.loading ? loader : widget.child,
         );
       },
     );
 
-    final _btn = ButtonTheme(
+    final btn = ButtonTheme(
       shape: RoundedRectangleBorder(borderRadius: _borderAnimation.value),
       disabledColor: widget.disabledColor,
       padding: const EdgeInsets.all(0),
@@ -212,10 +213,10 @@ class RoundedLoadingButtonState extends State<RoundedLoadingButton>
       height: widget.height,
       child: Center(
         child: _state.value == ButtonState.error
-            ? _cross
+            ? cross
             : _state.value == ButtonState.success
-                ? _check
-                : _btn,
+                ? check
+                : btn,
       ),
     );
   }

@@ -19,12 +19,12 @@ final pages = [
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
-      textColor: Colors.white,
+      textColor: kWhiteColor,
       child: Container(
           width: 250,
           height: 250,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(35)),
+              color: kWhiteColor, borderRadius: BorderRadius.circular(35)),
           child: Image.asset('assets/images/logo.png'))),
   PageData(
       title: "Visualize Your Emotions",
@@ -52,12 +52,12 @@ final pages = [
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
-      textColor: Colors.white,
+      textColor: kWhiteColor,
       child: Container(
           width: 250,
           height: 250,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(35)),
+              color: kWhiteColor, borderRadius: BorderRadius.circular(35)),
           child: Image.asset('assets/images/analyze.png'))),
   PageData(
       title: "Your Data, Always Safe",
@@ -147,7 +147,7 @@ class PageData {
     this.description,
     this.icon,
     this.bgColor = const LinearGradient(
-      colors: [Colors.white, Colors.white],
+      colors: [kWhiteColor, kWhiteColor],
     ),
     this.textColor = Colors.black,
     required this.child,

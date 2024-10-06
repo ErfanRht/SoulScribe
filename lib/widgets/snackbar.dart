@@ -26,7 +26,7 @@ ShowSnackBar(BuildContext context,
         children: [
           const Icon(
             FontAwesomeIcons.circleCheck,
-            color: Colors.white,
+            color: kWhiteColor,
             size: 22.5,
           ),
           const SizedBox(width: 10),
@@ -35,7 +35,7 @@ ShowSnackBar(BuildContext context,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
-              color: Colors.white,
+              color: kWhiteColor,
             ),
           ),
         ],

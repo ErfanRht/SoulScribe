@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                                 const Duration(milliseconds: 1750));
                           },
                           color: kSecondaryColor,
-                          backgroundColor: Colors.white,
+                          backgroundColor: kWhiteColor,
                           child: const HomePageEntries()),
                     )
                   : const HomePageEntriesError()),
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                 "SoulScript",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.ubuntu(
-                    color: Colors.white,
+                    color: kWhiteColor,
                     fontSize: 35,
                     fontWeight: FontWeight.bold),
               ),

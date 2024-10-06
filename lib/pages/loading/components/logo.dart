@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/loading/animations.dart';
 import 'package:soulscribe/widgets/copyright.dart';
 
@@ -22,7 +23,7 @@ class LoadingLogo extends StatelessWidget {
                     width: 250,
                     height: 250,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: kWhiteColor,
                         borderRadius: BorderRadius.circular(35)),
                     child: Image.asset('assets/images/logo.png'))),
           ),
@@ -36,7 +37,7 @@ class LoadingLogo extends StatelessWidget {
               "SoulScript",
               textAlign: TextAlign.center,
               style: GoogleFonts.ubuntu(
-                  color: Colors.white,
+                  color: kWhiteColor,
                   fontWeight: FontWeight.w900,
                   fontSize: 45),
             ),
@@ -50,7 +51,7 @@ class LoadingLogo extends StatelessWidget {
             child: Text(
               "Capture Your Journey, Visualize Your Emotions",
               style: GoogleFonts.ubuntu(
-                  color: Colors.white,
+                  color: kWhiteColor,
                   fontWeight: FontWeight.w900,
                   fontSize: 10),
             ),

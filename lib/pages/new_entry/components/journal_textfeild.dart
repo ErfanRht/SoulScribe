@@ -33,12 +33,12 @@ class _NewEntryJournalTextFeildState extends State<NewEntryJournalTextFeild> {
               scrollPhysics: const BouncingScrollPhysics(),
               textAlignVertical: TextAlignVertical.top,
               style: GoogleFonts.ubuntu(
-                  color: Colors.white, fontWeight: FontWeight.w600),
+                  color: kWhiteColor, fontWeight: FontWeight.w600),
               strutStyle: StrutStyle.fromTextStyle(GoogleFonts.ubuntu(
-                  color: Colors.white, fontWeight: FontWeight.w600)),
+                  color: kWhiteColor, fontWeight: FontWeight.w600)),
               spellCheckConfiguration: const SpellCheckConfiguration(
-                  misspelledSelectionColor: Colors.white),
-              cursorColor: Colors.white,
+                  misspelledSelectionColor: kWhiteColor),
+              cursorColor: kWhiteColor,
               maxLines: null,
               expands: true,
               onChanged: (text) {
@@ -47,7 +47,7 @@ class _NewEntryJournalTextFeildState extends State<NewEntryJournalTextFeild> {
               decoration: InputDecoration(
                 hintText: 'Start writing your thoughts...',
                 hintStyle: TextStyle(
-                    color: Colors.white.withOpacity(0.8)), // Hint text color
+                    color: kWhiteColor.withOpacity(0.8)), // Hint text color
                 filled: true,
                 fillColor: kSecondaryColor.withOpacity(1), // Background color
                 focusedBorder: OutlineInputBorder(
@@ -57,11 +57,11 @@ class _NewEntryJournalTextFeildState extends State<NewEntryJournalTextFeild> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
-                  borderSide: const BorderSide(width: 1.0, color: Colors.white),
+                  borderSide: const BorderSide(width: 1.0, color: kWhiteColor),
                 ),
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
-                  borderSide: const BorderSide(width: 1.0, color: Colors.white),
+                  borderSide: const BorderSide(width: 1.0, color: kWhiteColor),
                 ),
               ),
             ),
@@ -90,7 +90,7 @@ class _NewEntryJournalTextFeildState extends State<NewEntryJournalTextFeild> {
                               : _.journalCharCount.toString(),
                           style: GoogleFonts.ubuntu(
                               fontSize: _.journalCharCount == 0 ? 15 : 20,
-                              color: Colors.white,
+                              color: kWhiteColor,
                               fontWeight: FontWeight.bold),
                         ),
                       ),

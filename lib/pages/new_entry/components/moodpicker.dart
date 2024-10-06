@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:soulscribe/constants/colors.dart';
 
 class NewEntryMoodPicker extends StatelessWidget {
   const NewEntryMoodPicker({super.key});
@@ -19,7 +20,7 @@ class NewEntryMoodPicker extends StatelessWidget {
           const Icon(
             FontAwesomeIcons.solidFaceSmile,
             size: 22.5,
-            color: Colors.white,
+            color: kWhiteColor,
           ),
           const SizedBox(
             width: 10,
@@ -27,7 +28,7 @@ class NewEntryMoodPicker extends StatelessWidget {
           Text(
             "Mood",
             style: GoogleFonts.ubuntu(
-                color: Colors.white,
+                color: kWhiteColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 17.5),
           )

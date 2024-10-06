@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return GetBuilder<LoginPageAnimationsController>(builder: (_) {
       return Scaffold(
         body: IntroCirclesBackground(
-          backgroundColor: Colors.white,
+          backgroundColor: kWhiteColor,
           topMediumCircleColor: kSecondaryColor,
           topRightCircleColor: kPrimaryColor,
           child: Stack(
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 textStyle: const TextStyle(
                                   fontSize: 40,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: kWhiteColor,
                                 ),
                               ),
                             ),
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           LoginButton(
                             text: "Continue with email",
-                            textColor: Colors.white,
+                            textColor: kWhiteColor,
                             outsideColor: kSecondaryColor,
                             insideColor: kSecondaryColor,
                             image: const SizedBox(),
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: "Continue with Google",
                             textColor: kPrimaryColor,
                             outsideColor: kPrimaryColor,
-                            insideColor: Colors.white,
+                            insideColor: kWhiteColor,
                             onTap: () {},
                           ),
                           const SizedBox(
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: "Continue with Apple",
                             textColor: kPrimaryColor,
                             outsideColor: kPrimaryColor,
-                            insideColor: Colors.white,
+                            insideColor: kWhiteColor,
                             onTap: () {},
                           ),
                           const SizedBox(
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           LoginButton(
                             image: const SizedBox(),
                             text: "Continue as a guest",
-                            textColor: Colors.white,
+                            textColor: kWhiteColor,
                             outsideColor: kPrimaryColor,
                             insideColor: kPrimaryColor,
                             onTap: () {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:soulscribe/constants/colors.dart';
+
 class DiamondBottomNavigation extends StatelessWidget {
   final List<IconData> itemIcons;
   final IconData centerIcon;
@@ -11,7 +13,7 @@ class DiamondBottomNavigation extends StatelessWidget {
   final Color selectedLightColor;
   final Color unselectedColor;
   const DiamondBottomNavigation({
-    Key? key,
+    super.key,
     required this.itemIcons,
     required this.centerIcon,
     required this.selectedIndex,
@@ -20,9 +22,8 @@ class DiamondBottomNavigation extends StatelessWidget {
     this.selectedColor = const Color(0xff46BDFA),
     this.unselectedColor = const Color(0xffB5C8E7),
     this.selectedLightColor = const Color(0xff77E2FE),
-  })  : assert(itemIcons.length == 4 || itemIcons.length == 2,
-            "Item must equal 4 or 2"),
-        super(key: key);
+  }) : assert(itemIcons.length == 4 || itemIcons.length == 2,
+            "Item must equal 4 or 2");
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class DiamondBottomNavigation extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: height,
-              color: Colors.white,
+              color: kWhiteColor,
               child: Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: getRelativeWidth(0.1)),
@@ -188,7 +189,7 @@ class DiamondBottomNavigation extends StatelessWidget {
                         angle: math.pi / 4,
                         child: Icon(
                           centerIcon,
-                          color: Colors.white,
+                          color: kWhiteColor,
                         ),
                       )),
                     ),

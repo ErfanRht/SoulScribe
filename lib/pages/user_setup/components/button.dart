@@ -60,12 +60,10 @@ class _SetupButtonState extends State<SetupButton> {
         errorColor: Colors.redAccent,
         controller: _btnController,
         onPressed: _setName,
-        valueColor: Colors.white,
+        valueColor: kWhiteColor,
         child: Text('continue',
             style: GoogleFonts.ubuntu(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w700)),
+                color: kWhiteColor, fontSize: 20, fontWeight: FontWeight.w700)),
       ),
     );
   }

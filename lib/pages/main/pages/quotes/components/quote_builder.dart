@@ -60,7 +60,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                     width:
                                         MediaQuery.of(context).size.width - 60,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: kWhiteColor,
                                       borderRadius: BorderRadius.circular(37.5),
                                       boxShadow: [
                                         BoxShadow(
@@ -147,7 +147,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                                     kPrimaryColor)),
                                         child: const Icon(
                                           FontAwesomeIcons.solidCopy,
-                                          color: Colors.white,
+                                          color: kWhiteColor,
                                         ),
                                       ),
                                       const SizedBox(
@@ -166,7 +166,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                                     kSecondaryColor)),
                                         child: const Icon(
                                           FontAwesomeIcons.heart,
-                                          color: Colors.white,
+                                          color: kWhiteColor,
                                         ),
                                       ),
                                       const SizedBox(
@@ -185,7 +185,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                                     kPrimaryColor)),
                                         child: const Icon(
                                           IconlyBold.send,
-                                          color: Colors.white,
+                                          color: kWhiteColor,
                                         ),
                                       ),
                                     ],
@@ -217,7 +217,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                         ]),
                                     child: const Icon(
                                       FontAwesomeIcons.quoteRight,
-                                      color: Colors.white,
+                                      color: kWhiteColor,
                                     ),
                                   ),
                                 ),

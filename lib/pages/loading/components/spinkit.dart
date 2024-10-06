@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/loading/animations.dart';
 
 class LoadingSpinkit extends StatelessWidget {
@@ -12,8 +13,8 @@ class LoadingSpinkit extends StatelessWidget {
         return AnimatedOpacity(
           opacity: _.spinkitOpacity,
           duration: const Duration(milliseconds: 666),
-          child: const SpinKitSquareCircle(
-            color: Colors.white,
+          child: SpinKitSquareCircle(
+            color: kWhiteColor,
             size: 60,
           ),
         );

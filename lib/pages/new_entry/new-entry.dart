@@ -21,7 +21,7 @@ class NewEntryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.white, // Bottom navigation bar color
+        systemNavigationBarColor: kWhiteColor, // Bottom navigation bar color
         systemNavigationBarIconBrightness: Brightness.dark, // Icon color
       ),
     );
@@ -57,7 +57,7 @@ class NewEntryPage extends StatelessWidget {
           }
         },
         child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: kWhiteColor,
           appBar: AppBar(
             title: Text(
               'New Journal',
@@ -67,7 +67,7 @@ class NewEntryPage extends StatelessWidget {
             iconTheme: const IconThemeData(
               color: kPrimaryColor,
             ),
-            backgroundColor: Colors.white,
+            backgroundColor: kWhiteColor,
           ),
           body: Padding(
             padding: const EdgeInsets.all(25.0),

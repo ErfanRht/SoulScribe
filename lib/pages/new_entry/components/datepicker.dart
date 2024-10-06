@@ -25,15 +25,15 @@ class NewEntryDatePicker extends StatelessWidget {
                       // scaffoldBackgroundColor: kSecondaryColor,
                       colorScheme: const ColorScheme.light(
                         primary: kSecondaryColor,
-                        onPrimary: Colors.white,
-                        onSurface: Colors.white,
+                        onPrimary: kWhiteColor,
+                        onSurface: kWhiteColor,
                         surface: kPrimaryColor,
                       ),
                       textButtonTheme: TextButtonThemeData(
                         style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
+                            foregroundColor: kWhiteColor,
                             textStyle: GoogleFonts.ubuntu(
-                                color: Colors.white,
+                                color: kWhiteColor,
                                 fontWeight: FontWeight.bold)),
                       ),
                     ),
@@ -59,7 +59,7 @@ class NewEntryDatePicker extends StatelessWidget {
             children: [
               const Icon(
                 IconlyBold.calendar,
-                color: Colors.white,
+                color: kWhiteColor,
               ),
               const SizedBox(
                 width: 10,
@@ -67,7 +67,7 @@ class NewEntryDatePicker extends StatelessWidget {
               Text(
                 "${months[_.dateTime.month - 1]} ${_.dateTime.day}${_.dateTime.year != DateTime.now().year ? ",  ${_.dateTime.year}" : ""}",
                 style: GoogleFonts.ubuntu(
-                    color: Colors.white,
+                    color: kWhiteColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 17.5),
               )

@@ -70,7 +70,7 @@ class _HomePageEachDayEntriesState extends State<HomePageEachDayEntries> {
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   padding: const EdgeInsets.all(17.5),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: kWhiteColor,
                     borderRadius: BorderRadius.circular(
                         entries[index][1].length > 75 ? 17.5 : 15),
                     boxShadow: [

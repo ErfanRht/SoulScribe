@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/main/bottom_bar/components/colors.dart';
 
 decorOnlySolid({Color? color, double? radius}) => BoxDecoration(
@@ -63,7 +64,7 @@ decorSolidRound({bool? isShadow, required double radius, Color? color}) =>
 
 decorShadow() {
   return BoxDecoration(
-    color: Colors.white,
+    color: kWhiteColor,
     boxShadow: [
       BoxShadow(
         color: Colors.grey.withOpacity(0.2),

@@ -48,7 +48,7 @@ class _HomePageEntriesState extends State<HomePageEntries> {
                         height: 70,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12.5),
-                            color: Colors.white.withOpacity(1)),
+                            color: kWhiteColor.withOpacity(1)),
                         child: Column(
                           children: [
                             Text(

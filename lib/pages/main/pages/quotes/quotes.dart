@@ -27,7 +27,7 @@ class QuotesPage extends StatelessWidget {
                     "Quotes",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.ubuntu(
-                        color: Colors.white,
+                        color: kWhiteColor,
                         fontSize: 35,
                         fontWeight: FontWeight.bold),
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:soulscribe/constants/colors.dart';
 
 import 'clipper.dart';
 
@@ -245,8 +246,8 @@ class _Button extends StatelessWidget {
             shaderCallback: (Rect bounds) {
               return const LinearGradient(
                 colors: [
-                  Colors.white,
-                  Colors.white,
+                  kWhiteColor,
+                  kWhiteColor,
                 ],
               ).createShader(bounds);
             },

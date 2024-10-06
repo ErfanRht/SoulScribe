@@ -21,10 +21,10 @@ class NewEntryTitleTextFeild extends StatelessWidget {
         cursorRadius: const Radius.circular(10),
         enableSuggestions: true,
         scrollPhysics: const BouncingScrollPhysics(),
-        cursorColor: Colors.white,
+        cursorColor: kWhiteColor,
         decoration: InputDecoration(
           hintText: 'Journal Title...',
-          hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)),
+          hintStyle: TextStyle(color: kWhiteColor.withOpacity(0.8)),
           filled: true,
           fillColor: kSecondaryColor,
           focusedBorder: OutlineInputBorder(
@@ -33,15 +33,15 @@ class NewEntryTitleTextFeild extends StatelessWidget {
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(width: 1.0, color: Colors.white),
+            borderSide: const BorderSide(width: 1.0, color: kWhiteColor),
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(width: 1.0, color: Colors.white),
+            borderSide: const BorderSide(width: 1.0, color: kWhiteColor),
           ),
         ),
         style: GoogleFonts.ubuntu(
-          color: Colors.white,
+          color: kWhiteColor,
           fontWeight: FontWeight.w600,
         ),
       );

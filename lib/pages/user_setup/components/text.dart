@@ -32,7 +32,7 @@ class _SetupTextState extends State<SetupText> {
               padding: _padding,
               child: Text("Hi!",
                   style: GoogleFonts.ubuntu(
-                      color: Colors.white,
+                      color: kWhiteColor,
                       fontWeight: FontWeight.w800,
                       fontSize: 50)),
             )),
@@ -47,7 +47,7 @@ class _SetupTextState extends State<SetupText> {
               padding: _padding2,
               child: Text("It's so nice to meet you here!",
                   style: GoogleFonts.ubuntu(
-                      color: Colors.white,
+                      color: kWhiteColor,
                       fontWeight: FontWeight.w800,
                       fontSize: 22.5)),
             )),
@@ -60,7 +60,7 @@ class _SetupTextState extends State<SetupText> {
           duration: _animationSpeed,
           child: Text("What do your friends call you?",
               style: GoogleFonts.ubuntu(
-                  color: Colors.white,
+                  color: kWhiteColor,
                   fontWeight: FontWeight.w800,
                   fontSize: 22.5)),
         )),

@@ -51,9 +51,9 @@ class _SetupNameState extends State<SetupName> {
           child: TextField(
               textAlign: TextAlign.center,
               maxLength: 25,
-              cursorColor: Colors.white,
+              cursorColor: kWhiteColor,
               style: GoogleFonts.ubuntu(
-                color: Colors.white,
+                color: kWhiteColor,
                 fontSize: 25,
                 fontWeight: FontWeight.w700,
               ),
@@ -66,7 +66,7 @@ class _SetupNameState extends State<SetupName> {
                 disabledBorder: InputBorder.none,
                 counterText: '',
                 hintStyle:
-                    GoogleFonts.ubuntu(color: Colors.white, fontSize: 21.0),
+                    GoogleFonts.ubuntu(color: kWhiteColor, fontSize: 21.0),
                 hintText: "Your nickname...",
               ),
               onChanged: (value) {

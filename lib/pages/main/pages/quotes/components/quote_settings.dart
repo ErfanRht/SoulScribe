@@ -37,7 +37,7 @@ class _QuoteSettingsState extends State<QuoteSettings> {
               animateOnTap: false,
               height: 55,
               width: MediaQuery.of(context).size.width - 60,
-              color: Colors.white,
+              color: kWhiteColor,
               successColor: Colors.greenAccent,
               errorColor: kSecondaryColor,
               controller: btnController,
@@ -54,7 +54,7 @@ class _QuoteSettingsState extends State<QuoteSettings> {
                 //         alignment: Alignment.topCenter,
                 //         child: const QuoteCategoryPage()));
               },
-              valueColor: Colors.white,
+              valueColor: kWhiteColor,
               child: Text('Category',
                   style: GoogleFonts.ubuntu(
                       color: kPrimaryColor,
@@ -79,10 +79,10 @@ class _QuoteSettingsState extends State<QuoteSettings> {
               onPressed: () async {
                 reloadQuotes();
               },
-              valueColor: Colors.white,
+              valueColor: kWhiteColor,
               child: Text('Reload',
                   style: GoogleFonts.ubuntu(
-                      color: Colors.white,
+                      color: kWhiteColor,
                       fontSize: 20,
                       fontWeight: FontWeight.w700)),
             ),

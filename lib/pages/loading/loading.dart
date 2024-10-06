@@ -67,8 +67,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
                   duration: _.animationSpeed,
                   opacity: _.textOpacity,
                   child: const CopyRightWidget(
-                    color: Colors.white,
-                    nameColor: Colors.white,
+                    color: kWhiteColor,
+                    nameColor: kWhiteColor,
                   ),
                 )
               ],

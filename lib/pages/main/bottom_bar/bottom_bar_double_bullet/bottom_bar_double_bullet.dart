@@ -20,7 +20,7 @@ class BottomBarDoubleBullet extends StatefulWidget {
     this.color = Colors.green,
     this.circle1Color = Colors.blue,
     this.circle2Color = Colors.red,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = kWhiteColor,
     this.onSelect,
   });
 
@@ -270,7 +270,7 @@ class _BottomBarDoubleBulletState extends State<BottomBarDoubleBullet>
                         child: const Icon(
                           IconlyBold.edit,
                           size: 27.5,
-                          color: Colors.white,
+                          color: kWhiteColor,
                         ),
                       ),
                     ),

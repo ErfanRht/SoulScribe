@@ -62,20 +62,20 @@ class NewEntrySaveButton extends StatelessWidget {
                       _btnController2.reset();
                     }
                   },
-                  valueColor: Colors.white,
+                  valueColor: kWhiteColor,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
                         IconlyBold.delete,
-                        color: Colors.white,
+                        color: kWhiteColor,
                       ),
                       const SizedBox(
                         width: 10,
                       ),
                       Text('Delete',
                           style: GoogleFonts.ubuntu(
-                              color: Colors.white,
+                              color: kWhiteColor,
                               fontSize: 20,
                               fontWeight: FontWeight.w700)),
                     ],
@@ -127,13 +127,13 @@ class NewEntrySaveButton extends StatelessWidget {
                 _btnController.reset();
               }
             },
-            valueColor: Colors.white,
+            valueColor: kWhiteColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Save',
                     style: GoogleFonts.ubuntu(
-                        color: Colors.white,
+                        color: kWhiteColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w700)),
                 const SizedBox(
@@ -141,7 +141,7 @@ class NewEntrySaveButton extends StatelessWidget {
                 ),
                 const Icon(
                   FontAwesomeIcons.solidCircleCheck,
-                  color: Colors.white,
+                  color: kWhiteColor,
                 ),
               ],
             ),

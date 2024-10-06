@@ -12,7 +12,7 @@ class SetupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: IntroCirclesBackground(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       topMediumCircleColor: kSecondaryColor,
       topRightCircleColor: kPrimaryColor,
       child: Column(

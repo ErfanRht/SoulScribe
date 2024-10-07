@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_double_bullet/bottom_bar_double_bullet.dart';
 import 'package:soulscribe/pages/main/bottom_bar/bottom_bar_item.dart';
 import 'package:soulscribe/pages/main/pages/activity/activity.dart';
@@ -49,7 +47,7 @@ class MainPage extends StatelessWidget {
               color: kSecondaryColor,
               circle1Color: kSecondaryColor,
               circle2Color: kSecondaryColor,
-              selectedIndex: 4,
+              selectedIndex: 0,
               items: [
                 BottomBarItem(
                   iconData: IconlyBold.home,

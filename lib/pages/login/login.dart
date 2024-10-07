@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 250),
                             child: Text(
-                              'Welcome To SoulScript',
+                              'Welcome To SoulScribe',
                               style: GoogleFonts.ubuntu(
                                 textStyle: const TextStyle(
                                   fontSize: 40,

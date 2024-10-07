@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/models/quotes.dart';
 import 'package:soulscribe/pages/main/pages/quotes/components/quote_category.dart';
@@ -33,33 +34,48 @@ class _QuoteSettingsState extends State<QuoteSettings> {
           opacity: categoryButtonOpacity,
           child: Padding(
             padding: const EdgeInsets.only(bottom: 15),
-            child: RoundedLoadingButton(
-              animateOnTap: false,
-              height: 55,
-              width: MediaQuery.of(context).size.width - 60,
-              color: kWhiteColor,
-              successColor: Colors.greenAccent,
-              errorColor: kSecondaryColor,
-              controller: btnController,
-              onPressed: () async {
-                // Navigator.push(
-                //     context,
-                //     PageTransition(
-                //         duration: const Duration(milliseconds: 350),
-                //         reverseDuration: const Duration(milliseconds: 350),
-                //         childCurrent: const QuotesPage(),
-                //         type: PageTransitionType.scale,
-                //         fullscreenDialog: true,
-                //         maintainStateData: false,
-                //         alignment: Alignment.topCenter,
-                //         child: const QuoteCategoryPage()));
-              },
-              valueColor: kWhiteColor,
-              child: Text('Category',
-                  style: GoogleFonts.ubuntu(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 330),
+              child: RoundedLoadingButton(
+                animateOnTap: false,
+                height: 55,
+                width: MediaQuery.of(context).size.width - 60,
+                color: kWhiteColor,
+                successColor: Colors.greenAccent,
+                errorColor: kSecondaryColor,
+                controller: btnController,
+                onPressed: () async {
+                  // Navigator.push(
+                  //     context,
+                  //     PageTransition(
+                  //         duration: const Duration(milliseconds: 350),
+                  //         reverseDuration: const Duration(milliseconds: 350),
+                  //         childCurrent: const QuotesPage(),
+                  //         type: PageTransitionType.scale,
+                  //         fullscreenDialog: true,
+                  //         maintainStateData: false,
+                  //         alignment: Alignment.topCenter,
+                  //         child: const QuoteCategoryPage()));
+                },
+                valueColor: kWhiteColor,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      IconlyBold.category,
                       color: kPrimaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700)),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text('Category',
+                        style: GoogleFonts.ubuntu(
+                            color: kPrimaryColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700)),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
@@ -68,23 +84,38 @@ class _QuoteSettingsState extends State<QuoteSettings> {
           opacity: reloadButtonOpacity,
           child: Padding(
             padding: const EdgeInsets.only(bottom: 240),
-            child: RoundedLoadingButton(
-              height: 55,
-              animateOnTap: false,
-              width: MediaQuery.of(context).size.width - 250,
-              color: kSecondaryColor,
-              successColor: Colors.greenAccent,
-              errorColor: kSecondaryColor,
-              controller: btnController,
-              onPressed: () async {
-                reloadQuotes();
-              },
-              valueColor: kWhiteColor,
-              child: Text('Reload',
-                  style: GoogleFonts.ubuntu(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 425),
+              child: RoundedLoadingButton(
+                height: 55,
+                animateOnTap: false,
+                width: MediaQuery.of(context).size.width - 250,
+                color: kSecondaryColor,
+                successColor: Colors.greenAccent,
+                errorColor: kSecondaryColor,
+                controller: btnController,
+                onPressed: () async {
+                  reloadQuotes();
+                },
+                valueColor: kWhiteColor,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      IconlyBold.swap,
                       color: kWhiteColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700)),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text('Reload',
+                        style: GoogleFonts.ubuntu(
+                            color: kWhiteColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700)),
+                  ],
+                ),
+              ),
             ),
           ),
         )

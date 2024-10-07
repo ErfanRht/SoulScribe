@@ -95,7 +95,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
             addEntry(
                 title: "A New Beginning",
                 content:
-                    "Today, I’ve decided to start journaling. I’ve always wanted a space to capture my thoughts, and SoulScript feels like the perfect tool for it. Right now, I’m feeling a mix of excitement and curiosity—wondering what kind of stories, emotions, and reflections this journal will hold in the future. I’m not sure where this journey will lead, but I’m ready to explore, reflect, and grow. Here’s to new beginnings!",
+                    "Today, I’ve decided to start journaling. I’ve always wanted a space to capture my thoughts, and SoulScribe feels like the perfect tool for it. Right now, I’m feeling a mix of excitement and curiosity—wondering what kind of stories, emotions, and reflections this journal will hold in the future. I’m not sure where this journey will lead, but I’m ready to explore, reflect, and grow. Here’s to new beginnings!",
                 dateTime: DateTime.now());
             print("New Entry Automatically added.");
           }

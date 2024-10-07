@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 17.5),
               child: Text(
-                "SoulScript",
+                "SoulScribe",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.ubuntu(
                     color: kWhiteColor,

@@ -34,7 +34,7 @@ class LoadingLogo extends StatelessWidget {
             opacity: _.textOpacity,
             duration: _.animationSpeed,
             child: Text(
-              "SoulScript",
+              "SoulScribe",
               textAlign: TextAlign.center,
               style: GoogleFonts.ubuntu(
                   color: kWhiteColor,

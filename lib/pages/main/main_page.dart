@@ -49,7 +49,7 @@ class MainPage extends StatelessWidget {
               color: kSecondaryColor,
               circle1Color: kSecondaryColor,
               circle2Color: kSecondaryColor,
-              selectedIndex: 0,
+              selectedIndex: 4,
               items: [
                 BottomBarItem(
                   iconData: IconlyBold.home,
@@ -70,7 +70,7 @@ class MainPage extends StatelessWidget {
               onSelect: (index) {
                 if (index != 2) {
                   pageController.animateToPage(index,
-                      duration: const Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 50),
                       curve: Curves.easeIn);
                 }
               },

@@ -9,18 +9,18 @@ import 'package:soulscribe/pages/intro/intro.dart';
 import 'package:soulscribe/pages/loading/loading.dart';
 
 void main() {
-  runApp(SoulScript());
+  runApp(SoulScribe());
 }
 
-class SoulScript extends StatelessWidget {
-  SoulScript({super.key});
+class SoulScribe extends StatelessWidget {
+  SoulScribe({super.key});
   MainController mainController = Get.put(MainController());
   final String initRoute = loading_route;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'SoulScript',
+      title: 'SoulScribe',
       theme: ThemeData(
         useMaterial3: true,
       ),

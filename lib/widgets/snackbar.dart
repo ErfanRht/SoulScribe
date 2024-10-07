@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 
 ShowSnackBar(BuildContext context,
-    {Color backgroundColor = kPrimaryColor, required String content}) {
+    {Color backgroundColor = kPrimaryColor,
+    bool success = true,
+    required String content}) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       backgroundColor: backgroundColor,
       behavior: SnackBarBehavior.floating, // Makes it float above content
@@ -23,8 +26,10 @@ ShowSnackBar(BuildContext context,
       content: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
-            FontAwesomeIcons.circleCheck,
+          Icon(
+            success
+                ? FontAwesomeIcons.circleCheck
+                : FontAwesomeIcons.circleXmark,
             color: kWhiteColor,
             size: 22.5,
           ),

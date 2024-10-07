@@ -30,8 +30,23 @@ class _SettingsPageState extends State<SettingsPage> {
                   color: kPrimaryColor.withOpacity(0.25),
                   size: 150,
                 ),
-                onIcon: Icons.lock,
-                offIcon: FontAwesomeIcons.unlockKeyhole,
+                onIcon: IconlyBold.lock,
+                doesItWork: false,
+                offIcon: IconlyBold.unlock,
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              SettingsItem(
+                title: "PIN PASSCODE",
+                icon: Icon(
+                  IconlyBold.bag,
+                  color: kPrimaryColor.withOpacity(0.25),
+                  size: 150,
+                ),
+                onIcon: IconlyBold.lock,
+                doesItWork: false,
+                offIcon: IconlyBold.unlock,
               ),
               const SizedBox(
                 height: 25,
@@ -43,6 +58,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   color: kPrimaryColor.withOpacity(0.25),
                   size: 150,
                 ),
+                doesItWork: false,
                 onIcon: Icons.nightlight_round,
                 offIcon: Icons.sunny,
               )

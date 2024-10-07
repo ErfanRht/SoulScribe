@@ -10,11 +10,13 @@ class SettingsItem extends StatefulWidget {
       required this.title,
       required this.icon,
       required this.onIcon,
-      required this.offIcon});
+      required this.offIcon,
+      this.doesItWork = true});
   final String title;
   final Icon icon;
   final IconData onIcon;
   final IconData offIcon;
+  final bool doesItWork;
 
   @override
   State<SettingsItem> createState() => _SettingsItemState();
@@ -100,21 +102,35 @@ class _SettingsItemState extends State<SettingsItem> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  widget.icon,
+                  SizedBox(height: 150, width: 150, child: widget.icon),
                   Transform.scale(
                     scale: 1.25,
                     child: Switch(
                       value: isSwitched,
-                      onChanged: (value) {
+                      onChanged: (value) async {
                         setState(() {
                           isSwitched = value;
                         });
                         if (value) {
-                          ShowSnackBar(context,
-                              backgroundColor:
-                                  const Color(0xFF4CAF50).withOpacity(0.9),
-                              content:
-                                  "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} was enabled.");
+                          if (widget.doesItWork) {
+                            ShowSnackBar(context,
+                                backgroundColor:
+                                    const Color(0xFF4CAF50).withOpacity(0.9),
+                                content:
+                                    "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} was enabled.");
+                          } else {
+                            await Future.delayed(
+                                const Duration(milliseconds: 500));
+                            setState(() {
+                              isSwitched = false;
+                            });
+                            ShowSnackBar(context,
+                                backgroundColor:
+                                    kSecondaryColor.withOpacity(0.9),
+                                success: false,
+                                content:
+                                    "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} doesn't work yet.");
+                          }
                         }
                       },
                       thumbIcon: isSwitched

@@ -58,7 +58,7 @@ Future<bool> addEntry(
   }
 }
 
-Future<List<List<String>>> eachDayGetEntries(String date) async {
+List<List<String>> eachDayGetEntries(String date) {
   List<List<String>> dayEntries = [];
   List entries = Get.find<MainController>().entires;
   for (int i = 0; i < entries.length; i++) {
@@ -76,23 +76,6 @@ dateTimeFormatter(List<String> date) {
 dateDifference(List<String> date) {
   return dateTimeFormatter(date).difference(DateTime.now()).inDays.abs();
 }
-
-// Future<bool> updateTask({@required int index}) async {
-//   try {
-//     SharedPreferences prefs = await SharedPreferences.getInstance();
-//     List<String> tasks = prefs.getStringList('tasks') ?? [];
-//     if (Get.find<MainController>().tasks[index][2] == "not-done") {
-//       tasks[index] = tasks[index].replaceFirst("not-done", "done");
-//     } else {
-//       tasks[index] = tasks[index].replaceFirst("done", "not-done");
-//     }
-//     prefs.setStringList('tasks', tasks);
-//     getTasks();
-//     return true;
-//   } catch (e) {
-//     return false;
-//   }
-// }
 
 Future<bool> removeEntry({required String index}) async {
   try {

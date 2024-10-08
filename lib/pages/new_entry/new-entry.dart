@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -10,7 +9,6 @@ import 'package:soulscribe/pages/new_entry/components/moodpicker.dart';
 import 'package:soulscribe/pages/new_entry/components/save.dart';
 import 'package:soulscribe/pages/new_entry/components/title_textfield.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
-import 'package:soulscribe/widgets/rounded_loading_button.dart';
 
 class NewEntryPage extends StatelessWidget {
   NewEntryPage({super.key});
@@ -37,8 +35,8 @@ class NewEntryPage extends StatelessWidget {
                 const SystemUiOverlayStyle(
                   systemNavigationBarColor:
                       Color(0xffEDF3FA), // Bottom navigation bar color
-                  systemNavigationBarIconBrightness:
-                      Brightness.dark, // Icon color
+                  statusBarIconBrightness: Brightness.light,
+                  systemNavigationBarIconBrightness: Brightness.light,
                 ),
               );
             }
@@ -49,8 +47,8 @@ class NewEntryPage extends StatelessWidget {
               const SystemUiOverlayStyle(
                 systemNavigationBarColor:
                     Color(0xffEDF3FA), // Bottom navigation bar color
-                systemNavigationBarIconBrightness:
-                    Brightness.dark, // Icon color
+                statusBarIconBrightness: Brightness.light,
+                systemNavigationBarIconBrightness: Brightness.light,
               ),
             );
             return true;

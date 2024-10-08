@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/constants/routes.dart';

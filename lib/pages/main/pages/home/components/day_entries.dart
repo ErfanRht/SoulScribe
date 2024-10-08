@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -153,7 +152,7 @@ class _HomePageEachDayEntriesState extends State<HomePageEachDayEntries>
               duration: const Duration(milliseconds: 550),
               padding: EdgeInsets.only(bottom: padding),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.only(bottom: 20),
                 child: GestureDetector(
                   onTap: () {
                     Get.put(NewEntryController());
@@ -249,7 +248,7 @@ class _HomePageEachDayEntriesState extends State<HomePageEachDayEntries>
 
   getThisDateEntries() async {
     List<List<String>> gottenEntries = [];
-    gottenEntries = await eachDayGetEntries(widget.datetime);
+    gottenEntries = eachDayGetEntries(widget.datetime);
     setState(() {
       entries = gottenEntries;
     });

@@ -6,7 +6,6 @@ import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/pages/home/components/entries.dart';
 import 'package:soulscribe/pages/main/pages/home/components/entries_error.dart';
-import 'package:soulscribe/pages/new_entry/controller.dart';
 import 'package:soulscribe/widgets/circles_background/main_circles_background.dart';
 
 class HomePage extends StatelessWidget {

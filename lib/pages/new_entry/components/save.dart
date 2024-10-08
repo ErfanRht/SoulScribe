@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/new_entry/controller.dart';
@@ -162,6 +161,12 @@ newEntryBugFixer() async {
     await MainPage.pageController.animateToPage(1,
         duration: const Duration(milliseconds: 5), curve: Curves.easeIn);
     await MainPage.pageController.animateToPage(0,
+        duration: const Duration(milliseconds: 5), curve: Curves.easeIn);
+  }
+  if (currentIndex == 3) {
+    await MainPage.pageController.animateToPage(1,
+        duration: const Duration(milliseconds: 5), curve: Curves.easeIn);
+    await MainPage.pageController.animateToPage(3,
         duration: const Duration(milliseconds: 5), curve: Curves.easeIn);
   }
 }

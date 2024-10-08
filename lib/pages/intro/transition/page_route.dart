@@ -1,13 +1,14 @@
-import 'package:concentric_transition/clipper.dart';
 import 'package:flutter/widgets.dart';
+
+import 'clipper.dart';
 
 class ConcentricPageRoute<T> extends PageRoute<T> {
   ConcentricPageRoute({
     required this.builder,
-    RouteSettings? settings,
+    super.settings,
     this.maintainState = true,
-    bool fullscreenDialog = false,
-  }) : super(settings: settings, fullscreenDialog: fullscreenDialog);
+    super.fullscreenDialog,
+  });
 
   /// Builds the primary contents of the route.
   final WidgetBuilder builder;
@@ -44,13 +45,8 @@ class ConcentricPageRoute<T> extends PageRoute<T> {
     Animation<double> animation,
     Animation<double> secondaryAnimation,
   ) {
-    final Widget? result = builder(context);
+    final Widget result = builder(context);
     assert(() {
-      if (result == null) {
-        throw FlutterError(
-            'The builder for route "${settings.name}" returned null.\n'
-            'Route builders must never return null.');
-      }
       return true;
     }());
     return Semantics(
@@ -77,12 +73,11 @@ class ConcentricPageRoute<T> extends PageRoute<T> {
 
 class _FadeInPageTransition extends StatelessWidget {
   _FadeInPageTransition({
-    Key? key,
+    super.key,
     required Animation<double>
         routeAnimation, // The route's linear 0.0 - 1.0 animation.
     required this.child,
-  })  : _opacityAnimation = routeAnimation.drive(_easeInTween),
-        super(key: key);
+  }) : _opacityAnimation = routeAnimation.drive(_easeInTween);
 
   // // Fractional offset from 1/4 screen below the top to fully on screen.
   // static final Tween<Offset> _bottomUpTween = Tween<Offset>(

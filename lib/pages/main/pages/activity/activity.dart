@@ -6,7 +6,12 @@ import 'package:soulscribe/pages/main/pages/activity/components/entries_error.da
 import 'package:soulscribe/pages/main/pages/home/components/date_indicator.dart';
 import 'package:soulscribe/pages/main/pages/home/components/day_entries.dart';
 import 'package:soulscribe/widgets/circles_background/main_circles_background.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:soulscribe/widgets/table_calendar/src/customization/calendar_builders.dart';
+import 'package:soulscribe/widgets/table_calendar/src/customization/calendar_style.dart';
+import 'package:soulscribe/widgets/table_calendar/src/customization/days_of_week_style.dart';
+import 'package:soulscribe/widgets/table_calendar/src/customization/header_style.dart';
+import 'package:soulscribe/widgets/table_calendar/src/shared/utils.dart';
+import 'package:soulscribe/widgets/table_calendar/src/table_calendar.dart';
 import 'day_builder.dart';
 
 class ActivityPage extends StatefulWidget {

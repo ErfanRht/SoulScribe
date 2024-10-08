@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ms_undraw/ms_undraw.dart';
+import 'package:soulscribe/widgets/undraw/lib/illustrations.g.dart';
+import 'package:soulscribe/widgets/undraw/lib/ms_undraw.dart';
 import 'package:soulscribe/constants/colors.dart';
 
 class HomePageEntriesError extends StatelessWidget {

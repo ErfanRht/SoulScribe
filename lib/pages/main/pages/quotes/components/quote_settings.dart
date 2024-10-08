@@ -7,6 +7,7 @@ import 'package:soulscribe/pages/main/pages/quotes/components/quote_category.dar
 import 'package:soulscribe/pages/main/pages/quotes/quotes.dart';
 import 'package:soulscribe/widgets/page_transition/page_transition.dart';
 import 'package:soulscribe/widgets/rounded_loading_button.dart';
+import 'package:soulscribe/widgets/snackbar.dart';
 
 class QuoteSettings extends StatefulWidget {
   const QuoteSettings({super.key});
@@ -45,17 +46,11 @@ class _QuoteSettingsState extends State<QuoteSettings> {
                 errorColor: kSecondaryColor,
                 controller: btnController,
                 onPressed: () async {
-                  // Navigator.push(
-                  //     context,
-                  //     PageTransition(
-                  //         duration: const Duration(milliseconds: 350),
-                  //         reverseDuration: const Duration(milliseconds: 350),
-                  //         childCurrent: const QuotesPage(),
-                  //         type: PageTransitionType.scale,
-                  //         fullscreenDialog: true,
-                  //         maintainStateData: false,
-                  //         alignment: Alignment.topCenter,
-                  //         child: const QuoteCategoryPage()));
+                  await Future.delayed(const Duration(milliseconds: 250));
+                  ShowSnackBar(context,
+                      backgroundColor: kSecondaryColor.withOpacity(0.9),
+                      success: false,
+                      content: "Categories aren't available yet.");
                 },
                 valueColor: kWhiteColor,
                 child: Row(

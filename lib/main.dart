@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
@@ -8,7 +9,11 @@ import 'package:soulscribe/pages/intro/intro.dart';
 import 'package:soulscribe/pages/loading/loading.dart';
 
 void main() {
-  runApp(SoulScribe());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
+    runApp(SoulScribe());
+  });
 }
 
 class SoulScribe extends StatelessWidget {

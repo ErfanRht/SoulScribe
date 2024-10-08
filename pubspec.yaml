@@ -52,6 +52,7 @@ dependencies:
   awesome_snackbar_content: ^0.1.2
   iconly: ^1.0.1
   table_calendar: ^3.1.2
+  share_plus: ^10.0.2
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/widgets/snackbar.dart';
@@ -130,7 +131,7 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                         onPressed: () {
                                           Clipboard.setData(ClipboardData(
                                               text:
-                                                  "${_.quotes[index][0]}\n--${_.quotes[index][1]}"));
+                                                  "${_.quotes[index][0]}\n---${_.quotes[index][1]}---"));
                                           ShowSnackBar(context,
                                               backgroundColor: kPrimaryColor
                                                   .withOpacity(0.9),
@@ -173,7 +174,27 @@ class _QuoteBuilderState extends State<QuoteBuilder> {
                                         width: 20,
                                       ),
                                       ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                          final result = await Share.share(
+                                              '${_.quotes[index][0]}\n---${_.quotes[index][1]}---',
+                                              subject:
+                                                  'Look at this quote which i found on SoulScribe!');
+
+                                          if (result.status ==
+                                              ShareResultStatus.success) {
+                                            ShowSnackBar(context,
+                                                backgroundColor: kPrimaryColor
+                                                    .withOpacity(0.9),
+                                                content:
+                                                    "Successfully shared!");
+                                          } else {
+                                            ShowSnackBar(context,
+                                                backgroundColor: kSecondaryColor
+                                                    .withOpacity(0.9),
+                                                success: false,
+                                                content: "Sahring failed!");
+                                          }
+                                        },
                                         style: ButtonStyle(
                                             minimumSize:
                                                 WidgetStateProperty.all(

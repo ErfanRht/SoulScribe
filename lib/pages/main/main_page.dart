@@ -47,7 +47,7 @@ class MainPage extends StatelessWidget {
               color: kSecondaryColor,
               circle1Color: kSecondaryColor,
               circle2Color: kSecondaryColor,
-              selectedIndex: 3,
+              selectedIndex: 0,
               items: [
                 BottomBarItem(
                   iconData: IconlyBold.home,

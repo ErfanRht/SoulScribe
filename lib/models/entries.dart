@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:soulscribe/constants/data.dart';
 import 'package:soulscribe/main_controller.dart';
-import 'package:soulscribe/pages/new_entry/controller.dart';
 
 Future<bool> getEntries() async {
   try {
@@ -29,6 +28,7 @@ Future<bool> getEntries() async {
     }
     entriesDate2.sort((a, b) => int.parse(a[3]).compareTo(int.parse(b[3])));
     Get.find<MainController>().updateMainStete(newEntriesDates: entriesDate2);
+    checkSamples();
     return true;
   } catch (e) {
     print(e);
@@ -39,7 +39,8 @@ Future<bool> getEntries() async {
 Future<bool> addEntry(
     {required String title,
     required String content,
-    required DateTime dateTime}) async {
+    required DateTime dateTime,
+    bool isSample = false}) async {
   try {
     if (title == "" || content == "") {
       return false;
@@ -47,7 +48,7 @@ Future<bool> addEntry(
       SharedPreferences prefs = await SharedPreferences.getInstance();
       List<String> entries = prefs.getStringList('entries') ?? [];
       entries.add(
-          "${title.replaceAll("&&+-+-&&", "")}&&+-+-&&${content.replaceAll("&&+-+-&&", "")}&&+-+-&&${dateTime.year}-${dateTime.month}-${dateTime.day}");
+          "${title.replaceAll("&&+-+-&&", "")}&&+-+-&&${content.replaceAll("&&+-+-&&", "")}&&+-+-&&${dateTime.year}-${dateTime.month}-${dateTime.day}&&+-+-&&${isSample ? "isSample" : "isNotSample"}");
       prefs.setStringList('entries', entries);
       getEntries();
       return true;
@@ -99,13 +100,47 @@ Future<bool> removeEntry({required String index}) async {
   }
 }
 
-// Future<bool> removeAllTasks() async {
-//   try {
-//     SharedPreferences prefs = await SharedPreferences.getInstance();
-//     await prefs.remove('tasks');
-//     getTasks();
-//     return true;
-//   } catch (e) {
-//     return false;
-//   }
-// }
+Future<bool> checkSamples() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (prefs.getBool("samples") == null) {
+    prefs.setBool("samples", false);
+  }
+  Get.find<MainController>().isSamplesEnabled =
+      prefs.getBool("samples") ?? false;
+  return prefs.getBool("samples") ?? false;
+}
+
+Future<bool> enableSampleEntries() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  for (List<String> entry in sampleEntries) {
+    addEntry(
+        title: entry[0],
+        content: entry[1],
+        isSample: true,
+        dateTime: dateTimeFormatter(entry[2].split("-").toList()));
+  }
+  prefs.setBool("samples", true);
+  return true;
+}
+
+Future<bool> disableSampleEntries() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  List<String> finalEntries = [];
+  List entries = Get.find<MainController>().entires;
+  for (int i = entries.length - 1; i >= 0; i--) {
+    var entry = entries[i];
+    if (entry[3] == "isSample") {
+      entries.removeAt(int.parse(entry[4]) - 1);
+    }
+  }
+
+  finalEntries = entries.map((e) {
+    List<String> entryParts = e;
+    entryParts.removeLast();
+    return entryParts.join("&&+-+-&&");
+  }).toList();
+  prefs.setStringList('entries', finalEntries);
+  prefs.setBool("samples", false);
+  getEntries();
+  return true;
+}

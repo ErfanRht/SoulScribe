@@ -3,9 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/models/quotes.dart';
-import 'package:soulscribe/pages/main/pages/quotes/components/quote_category.dart';
-import 'package:soulscribe/pages/main/pages/quotes/quotes.dart';
-import 'package:soulscribe/widgets/page_transition/page_transition.dart';
 import 'package:soulscribe/widgets/rounded_loading_button.dart';
 import 'package:soulscribe/widgets/snackbar.dart';
 

@@ -6,6 +6,7 @@ class MainController extends GetxController {
   List<List<String>> entriesDates = [];
   List<List<String>> quotes = [];
   bool isFirstEnter = false;
+  bool isSamplesEnabled = false;
   String userName = "";
   String userEmail = "";
 

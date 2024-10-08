@@ -11,13 +11,16 @@ class SettingsItem extends StatefulWidget {
       required this.icon,
       required this.onIcon,
       required this.offIcon,
-      this.doesItWork = true});
+      this.doesItWork = true,
+      this.defaultValue = false,
+      required this.onTap});
   final String title;
+  final bool defaultValue;
   final Icon icon;
   final IconData onIcon;
   final IconData offIcon;
   final bool doesItWork;
-
+  final Function onTap;
   @override
   State<SettingsItem> createState() => _SettingsItemState();
 }
@@ -30,6 +33,7 @@ class _SettingsItemState extends State<SettingsItem> {
   void initState() {
     super.initState();
     loadAnimations();
+    isSwitched = widget.defaultValue;
   }
 
   @override
@@ -108,17 +112,25 @@ class _SettingsItemState extends State<SettingsItem> {
                     child: Switch(
                       value: isSwitched,
                       onChanged: (value) async {
-                        setState(() {
-                          isSwitched = value;
-                        });
                         if (value) {
                           if (widget.doesItWork) {
-                            ShowSnackBar(context,
-                                backgroundColor:
-                                    const Color(0xFF4CAF50).withOpacity(0.9),
-                                content:
-                                    "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} was enabled.");
+                            bool result = await widget.onTap();
+                            if (result) {
+                              setState(() {
+                                isSwitched = value;
+                              });
+                              await Future.delayed(
+                                  const Duration(milliseconds: 500));
+                              ShowSnackBar(context,
+                                  backgroundColor:
+                                      const Color(0xFF4CAF50).withOpacity(0.9),
+                                  content:
+                                      "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} was enabled.");
+                            }
                           } else {
+                            setState(() {
+                              isSwitched = value;
+                            });
                             await Future.delayed(
                                 const Duration(milliseconds: 500));
                             setState(() {
@@ -131,6 +143,8 @@ class _SettingsItemState extends State<SettingsItem> {
                                 content:
                                     "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} doesn't work yet.");
                           }
+                        } else {
+                          widget.onTap();
                         }
                       },
                       thumbIcon: isSwitched

@@ -164,7 +164,7 @@ class _HomePageEachDayEntriesState extends State<HomePageEachDayEntries>
                         newDateTime: dateTimeFormatter(
                             entries[index][2].split("-").toList()),
                         newJournalCharCount: entries[index][1].length,
-                        newId: entries[index][3],
+                        newId: entries[index][4],
                         isBeingEdited: true);
                     Navigator.push(
                         context,

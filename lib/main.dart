@@ -22,19 +22,21 @@ class SoulScribe extends StatelessWidget {
   final String initRoute = loading_route;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'SoulScribe',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      initialRoute: initRoute,
-      routes: {
-        loading_route: (context) => const LoadingScreen(),
-        home_route: (context) => const MainPage(),
-        setup_route: (context) => const SetupScreen(),
-        intro_route: (context) => const IntroPage(),
-      },
-    );
+    return Builder(builder: (context) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'SoulScribe',
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
+        initialRoute: initRoute,
+        routes: {
+          loading_route: (context) => const LoadingScreen(),
+          home_route: (context) => const MainPage(),
+          setup_route: (context) => const SetupScreen(),
+          intro_route: (context) => const IntroPage(),
+        },
+      );
+    });
   }
 }

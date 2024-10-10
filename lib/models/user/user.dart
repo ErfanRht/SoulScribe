@@ -8,7 +8,8 @@ Future<bool> UpdateUserData({String? name, String? email}) async {
     setUserName(userName: name);
   }
   if (email != null && email != "") {
-    setUserEmail(userEmail: email);
+    bool response = await setUserEmail(userEmail: email);
+    return response;
   }
   return true;
 }

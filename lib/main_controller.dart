@@ -9,11 +9,13 @@ class MainController extends GetxController {
   bool isSamplesEnabled = false;
   String userName = "";
   String userEmail = "";
+  String imageUrl = "";
 
   updateMainStete({
     bool? newFirstEnterStatus,
     String? newUserName,
     String? newUserEmail,
+    String? newImageUrl,
     List? newEntries,
     List<List<String>>? newEntriesDates,
     List<List<String>>? newQuotes,
@@ -21,6 +23,7 @@ class MainController extends GetxController {
     isFirstEnter = newFirstEnterStatus ?? isFirstEnter;
     userName = newUserName ?? userName;
     userEmail = newUserEmail ?? userEmail;
+    imageUrl = newImageUrl ?? imageUrl;
     entires = newEntries ?? entires;
     entriesDates = newEntriesDates ?? entriesDates;
     quotes = newQuotes ?? quotes;

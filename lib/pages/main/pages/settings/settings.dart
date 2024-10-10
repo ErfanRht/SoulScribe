@@ -10,6 +10,8 @@ import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/main/pages/settings/components/settings_item.dart';
 import 'package:soulscribe/widgets/circles_background/main_circles_background.dart';
 
+import 'components/user-box/user-box.dart';
+
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
@@ -23,77 +25,100 @@ class _SettingsPageState extends State<SettingsPage> {
     return GetBuilder<MainController>(builder: (_) {
       return Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 130, horizontal: 15),
-            child: Column(
-              children: [
-                SettingsItem(
-                  title: "BIOMETRIC PASSCODE",
-                  icon: Icon(
-                    FontAwesomeIcons.fingerprint,
-                    color: kPrimaryColor.withOpacity(0.25),
-                    size: 150,
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 120, horizontal: 15),
+              child: Column(
+                children: [
+                  const SettingsPageUserBox(),
+                  const SizedBox(
+                    height: 25,
                   ),
-                  onIcon: IconlyBold.lock,
-                  doesItWork: false,
-                  offIcon: IconlyBold.unlock,
-                  onTap: () {},
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                SettingsItem(
-                  title: "PIN PASSCODE",
-                  icon: Icon(
-                    IconlyBold.bag,
-                    color: kPrimaryColor.withOpacity(0.25),
-                    size: 150,
+                  SettingsItem(
+                    title: "BIOMETRIC PASSCODE",
+                    icon: Icon(
+                      FontAwesomeIcons.fingerprint,
+                      color: kPrimaryColor.withOpacity(0.25),
+                      size: 150,
+                    ),
+                    onIcon: IconlyBold.lock,
+                    doesItWork: false,
+                    offIcon: IconlyBold.unlock,
+                    onTap: () {},
                   ),
-                  onIcon: IconlyBold.lock,
-                  doesItWork: false,
-                  offIcon: IconlyBold.unlock,
-                  onTap: () {},
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                SettingsItem(
-                  title: "DARK MODE",
-                  icon: Icon(
-                    FontAwesomeIcons.cloudMoon,
-                    color: kPrimaryColor.withOpacity(0.25),
-                    size: 150,
+                  const SizedBox(
+                    height: 25,
                   ),
-                  doesItWork: false,
-                  onIcon: Icons.nightlight_round,
-                  offIcon: Icons.sunny,
-                  onTap: () {},
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                SettingsItem(
-                  title: "SAMPLE RAW ENTRIES",
-                  icon: Icon(
-                    IconlyBold.wallet,
-                    color: kPrimaryColor.withOpacity(0.25),
-                    size: 150,
+                  SettingsItem(
+                    title: "FACE ID",
+                    icon: Icon(
+                      IconlyBold.scan,
+                      color: kPrimaryColor.withOpacity(0.25),
+                      size: 150,
+                    ),
+                    onIcon: IconlyBold.lock,
+                    doesItWork: false,
+                    offIcon: IconlyBold.unlock,
+                    onTap: () {},
                   ),
-                  onIcon: IconlyBold.download,
-                  offIcon: IconlyBold.paper_fail,
-                  defaultValue: _.isSamplesEnabled,
-                  onTap: () async {
-                    bool? result;
-                    if (_.isSamplesEnabled) {
-                      result = await _showRawDataAlertDialog(context, false);
-                    } else {
-                      result = await _showRawDataAlertDialog(
-                          context, true); // Enable dialog
-                    }
-                    return result;
-                  },
-                )
-              ],
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  SettingsItem(
+                    title: "PIN PASSCODE",
+                    icon: Icon(
+                      IconlyBold.bag,
+                      color: kPrimaryColor.withOpacity(0.25),
+                      size: 150,
+                    ),
+                    onIcon: IconlyBold.lock,
+                    doesItWork: false,
+                    offIcon: IconlyBold.unlock,
+                    onTap: () {},
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  SettingsItem(
+                    title: "DARK MODE",
+                    icon: Icon(
+                      FontAwesomeIcons.cloudMoon,
+                      color: kPrimaryColor.withOpacity(0.25),
+                      size: 150,
+                    ),
+                    doesItWork: false,
+                    onIcon: Icons.nightlight_round,
+                    offIcon: Icons.sunny,
+                    onTap: () {},
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  SettingsItem(
+                    title: "SAMPLE RAW ENTRIES",
+                    icon: Icon(
+                      IconlyBold.wallet,
+                      color: kPrimaryColor.withOpacity(0.25),
+                      size: 150,
+                    ),
+                    onIcon: IconlyBold.download,
+                    offIcon: IconlyBold.paper_fail,
+                    defaultValue: _.isSamplesEnabled,
+                    onTap: () async {
+                      bool? result;
+                      if (_.isSamplesEnabled) {
+                        result = await _showRawDataAlertDialog(context, false);
+                      } else {
+                        result = await _showRawDataAlertDialog(
+                            context, true); // Enable dialog
+                      }
+                      return result;
+                    },
+                  )
+                ],
+              ),
             ),
           ),
           MainCirclesBackground(

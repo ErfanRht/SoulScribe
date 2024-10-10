@@ -1,0 +1,46 @@
+Date : 2024-10-10 15:55:10
+Directory : c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib
+Total : 10 files,  568 codes, 59 comments, 32 blanks, all 659 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         10 |        568 |         59 |         32 |        659 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                        |         10 |        568 |         59 |         32 |        659 |
+| . (Files)                                                                                                                |          1 |          3 |          0 |          0 |          3 |
+| constants                                                                                                                |          1 |         -5 |          0 |          0 |         -5 |
+| models                                                                                                                   |          1 |          1 |          0 |          0 |          1 |
+| models\user                                                                                                              |          1 |          1 |          0 |          0 |          1 |
+| pages                                                                                                                    |          6 |        552 |         59 |         30 |        641 |
+| pages\main                                                                                                               |          6 |        552 |         59 |         30 |        641 |
+| pages\main\pages                                                                                                         |          6 |        552 |         59 |         30 |        641 |
+| pages\main\pages\settings                                                                                                |          6 |        552 |         59 |         30 |        641 |
+| pages\main\pages\settings (Files)                                                                                        |          1 |         24 |          0 |          1 |         25 |
+| pages\main\pages\settings\components                                                                                     |          5 |        528 |         59 |         29 |        616 |
+| pages\main\pages\settings\components\user-box                                                                            |          5 |        528 |         59 |         29 |        616 |
+| widgets                                                                                                                  |          1 |         17 |          0 |          2 |         19 |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                 | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\constants\data.dart                                                   | Dart     |         -5 |          0 |          0 |         -5 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\main_controller.dart                                                  | Dart     |          3 |          0 |          0 |          3 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\models\user\user.dart                                                 | Dart     |          1 |          0 |          0 |          1 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\pages\main\pages\settings\components\user-box\user-box.dart           | Dart     |        103 |          2 |          6 |        111 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\pages\main\pages\settings\components\user-box\user-email.dart         | Dart     |         77 |          0 |          6 |         83 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\pages\main\pages\settings\components\user-box\user-info.dart          | Dart     |        203 |         57 |          8 |        268 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\pages\main\pages\settings\components\user-box\user-name.dart          | Dart     |         73 |          0 |          6 |         79 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\pages\main\pages\settings\components\user-box\user_profile_image.dart | Dart     |         72 |          0 |          3 |         75 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\pages\main\pages\settings\settings.dart                               | Dart     |         24 |          0 |          1 |         25 |
+| c:\Users\Erfan\Dev\Flutter\Projects\soulscribe\lib\widgets\divider.dart                                                  | Dart     |         17 |          0 |          2 |         19 |
+| Total                                                                                                                    |          |        568 |         59 |         32 |        659 |
++--------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

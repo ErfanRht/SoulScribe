@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:soulscribe/pages/auth_page.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/constants/routes.dart';
@@ -35,6 +36,7 @@ class SoulScribe extends StatelessWidget {
           home_route: (context) => const MainPage(),
           setup_route: (context) => const SetupScreen(),
           intro_route: (context) => const IntroPage(),
+          auth_route: (context) => BiometricAuthScreen()
         },
       );
     });

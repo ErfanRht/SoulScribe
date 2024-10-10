@@ -3,8 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/main_controller.dart';
+import 'package:soulscribe/models/biometrics.dart';
 import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/main/pages/settings/components/settings_item.dart';
@@ -20,6 +22,13 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  bool authenticate = false;
+  @override
+  void initState() {
+    super.initState();
+    getAuthDefaultValue();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MainController>(builder: (_) {
@@ -43,40 +52,28 @@ class _SettingsPageState extends State<SettingsPage> {
                       color: kPrimaryColor.withOpacity(0.25),
                       size: 150,
                     ),
+                    key: ValueKey(authenticate),
+                    defaultValue: authenticate,
                     onIcon: IconlyBold.lock,
-                    doesItWork: false,
                     offIcon: IconlyBold.unlock,
-                    onTap: () {},
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  SettingsItem(
-                    title: "FACE ID",
-                    icon: Icon(
-                      IconlyBold.scan,
-                      color: kPrimaryColor.withOpacity(0.25),
-                      size: 150,
-                    ),
-                    onIcon: IconlyBold.lock,
-                    doesItWork: false,
-                    offIcon: IconlyBold.unlock,
-                    onTap: () {},
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  SettingsItem(
-                    title: "PIN PASSCODE",
-                    icon: Icon(
-                      IconlyBold.bag,
-                      color: kPrimaryColor.withOpacity(0.25),
-                      size: 150,
-                    ),
-                    onIcon: IconlyBold.lock,
-                    doesItWork: false,
-                    offIcon: IconlyBold.unlock,
-                    onTap: () {},
+                    onTapOn: () async {
+                      if (await doesDeviceSupportBiometrics()) {
+                        final LocalAuthentication auth = LocalAuthentication();
+                        final bool didAuthenticate = await auth.authenticate(
+                            localizedReason:
+                                'Please authenticate to access SoulScript');
+                        if (didAuthenticate) {
+                          authenticateWithBiometricsStatus(status: true);
+                        }
+                        return didAuthenticate;
+                      } else {
+                        return false;
+                      }
+                    },
+                    onTapOff: () {
+                      authenticateWithBiometricsStatus(status: false);
+                      return true;
+                    },
                   ),
                   const SizedBox(
                     height: 25,
@@ -91,7 +88,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     doesItWork: false,
                     onIcon: Icons.nightlight_round,
                     offIcon: Icons.sunny,
-                    onTap: () {},
+                    onTapOn: () {},
+                    onTapOff: () {},
                   ),
                   const SizedBox(
                     height: 25,
@@ -106,14 +104,15 @@ class _SettingsPageState extends State<SettingsPage> {
                     onIcon: IconlyBold.download,
                     offIcon: IconlyBold.paper_fail,
                     defaultValue: _.isSamplesEnabled,
-                    onTap: () async {
+                    onTapOn: () async {
                       bool? result;
-                      if (_.isSamplesEnabled) {
-                        result = await _showRawDataAlertDialog(context, false);
-                      } else {
-                        result = await _showRawDataAlertDialog(
-                            context, true); // Enable dialog
-                      }
+                      result = await _showRawDataAlertDialog(context, true);
+
+                      return result;
+                    },
+                    onTapOff: () async {
+                      bool? result;
+                      result = await _showRawDataAlertDialog(context, false);
                       return result;
                     },
                   )
@@ -197,6 +196,13 @@ class _SettingsPageState extends State<SettingsPage> {
         );
       },
     );
+  }
+
+  getAuthDefaultValue() async {
+    bool auth = await authenticateWithBiometricsStatus();
+    setState(() {
+      authenticate = auth;
+    });
   }
 }
 

@@ -13,7 +13,7 @@ class LoadingSpinkit extends StatelessWidget {
         return AnimatedOpacity(
           opacity: _.spinkitOpacity,
           duration: const Duration(milliseconds: 666),
-          child: SpinKitSquareCircle(
+          child: const SpinKitSquareCircle(
             color: kWhiteColor,
             size: 60,
           ),

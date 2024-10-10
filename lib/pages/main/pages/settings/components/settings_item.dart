@@ -5,22 +5,25 @@ import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/widgets/snackbar.dart';
 
 class SettingsItem extends StatefulWidget {
-  const SettingsItem(
-      {super.key,
-      required this.title,
-      required this.icon,
-      required this.onIcon,
-      required this.offIcon,
-      this.doesItWork = true,
-      this.defaultValue = false,
-      required this.onTap});
+  const SettingsItem({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.onIcon,
+    required this.offIcon,
+    this.doesItWork = true,
+    this.defaultValue = false,
+    required this.onTapOn,
+    required this.onTapOff,
+  });
   final String title;
   final bool defaultValue;
   final Icon icon;
   final IconData onIcon;
   final IconData offIcon;
   final bool doesItWork;
-  final Function onTap;
+  final Function onTapOn;
+  final Function onTapOff;
   @override
   State<SettingsItem> createState() => _SettingsItemState();
 }
@@ -114,7 +117,7 @@ class _SettingsItemState extends State<SettingsItem> {
                       onChanged: (value) async {
                         if (value) {
                           if (widget.doesItWork) {
-                            bool result = await widget.onTap();
+                            bool result = await widget.onTapOn();
                             if (result) {
                               setState(() {
                                 isSwitched = value;
@@ -144,7 +147,12 @@ class _SettingsItemState extends State<SettingsItem> {
                                     "${widget.title.toLowerCase()[0].toUpperCase() + widget.title.toLowerCase().substring(1)} doesn't work yet.");
                           }
                         } else {
-                          widget.onTap();
+                          bool result = await widget.onTapOff();
+                          if (result) {
+                            setState(() {
+                              isSwitched = value;
+                            });
+                          }
                         }
                       },
                       thumbIcon: isSwitched

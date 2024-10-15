@@ -1,9 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/constants/data.dart';
 import 'package:soulscribe/main_controller.dart';
 import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/pages/home/components/date_indicator.dart';

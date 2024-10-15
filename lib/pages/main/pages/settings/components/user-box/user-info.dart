@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/constants/data.dart';
-import 'package:soulscribe/main.dart';
 import 'package:soulscribe/pages/main/pages/settings/components/user-box/user-email.dart';
 import 'package:soulscribe/pages/main/pages/settings/components/user-box/user-name.dart';
-import 'package:soulscribe/widgets/divider.dart';
 
 import 'user_profile_image.dart';
 

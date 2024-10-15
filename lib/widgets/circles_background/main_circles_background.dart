@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:soulscribe/pages/login/animations.dart';
 
 class MainCirclesBackground extends StatefulWidget {
   final Widget child;

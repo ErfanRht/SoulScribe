@@ -18,8 +18,6 @@ class IntroCirclesBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return GetBuilder<LoginPageAnimationsController>(builder: (_) {
       return Container(
         width: double.infinity,

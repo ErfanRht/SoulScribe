@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+// ignore: file_names
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:soulscribe/main_controller.dart';

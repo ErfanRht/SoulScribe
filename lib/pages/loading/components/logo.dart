@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/loading/animations.dart';
-import 'package:soulscribe/widgets/copyright.dart';
 
 class LoadingLogo extends StatelessWidget {
   const LoadingLogo({super.key});

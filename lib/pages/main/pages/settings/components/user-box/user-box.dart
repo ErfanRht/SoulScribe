@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:soulscribe/constants/colors.dart';
+import 'package:soulscribe/widgets/snackbar.dart';
 import 'user-email.dart';
 import 'user-name.dart';
 import 'user_profile_image.dart';
@@ -75,22 +76,30 @@ class _SettingsPageUserBoxState extends State<SettingsPageUserBox> {
               bottom: 0,
               right: 0,
               left: 0,
-              child: AnimatedPadding(
-                duration: const Duration(milliseconds: 500),
-                padding: EdgeInsets.only(bottom: padding),
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: kSecondaryColor),
-                  margin: const EdgeInsets.symmetric(horizontal: 85),
-                  height: 45,
-                  child: Center(
-                    child: Text(
-                      "Activity Chart",
-                      style: GoogleFonts.ubuntu(
-                          fontSize: 17.5,
-                          fontWeight: FontWeight.bold,
-                          color: kWhiteColor),
+              child: GestureDetector(
+                onTap: () {
+                  ShowSnackBar(context,
+                      backgroundColor: kSecondaryColor.withOpacity(0.9),
+                      success: false,
+                      content: "Activity Chart isn't activated yet.");
+                },
+                child: AnimatedPadding(
+                  duration: const Duration(milliseconds: 500),
+                  padding: EdgeInsets.only(bottom: padding),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: kSecondaryColor),
+                    margin: const EdgeInsets.symmetric(horizontal: 85),
+                    height: 45,
+                    child: Center(
+                      child: Text(
+                        "Activity Chart",
+                        style: GoogleFonts.ubuntu(
+                            fontSize: 17.5,
+                            fontWeight: FontWeight.bold,
+                            color: kWhiteColor),
+                      ),
                     ),
                   ),
                 ),

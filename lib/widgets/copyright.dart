@@ -25,7 +25,7 @@ class CopyRightWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'This site is developed by ',
+                    'This application is developed by ',
                     style: GoogleFonts.rubik(
                         color: color,
                         fontSize: 12.5,

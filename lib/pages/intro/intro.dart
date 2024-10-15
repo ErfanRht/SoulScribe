@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
-import 'package:soulscribe/widgets/undraw/lib/illustrations.g.dart';
-import 'package:soulscribe/widgets/undraw/lib/ms_undraw.dart';
+import 'package:soulscribe/widgets/illustration_loader.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/login/login.dart';
 import 'package:soulscribe/widgets/page_transition/src/enum.dart';
@@ -33,25 +31,8 @@ final pages = [
     description:
         "Easily track your mood with insightful charts and trends. See how your feelings evolve over time and gain self-awareness.",
     textColor: Colors.black,
-    child: SvgPicture.network(
-      'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/a_whole_year_vnfm.svg',
-      placeholderBuilder: (BuildContext context) =>
-          const CircularProgressIndicator(),
-      height: 200,
-      width: 200,
-    ),
-    //       UnDraw(
-    //   color: const Color(0xffED1E79),
-    //   width: 225,
-    //   height: 225,
-    //   illustration: UnDrawIllustration.feeling_blue,
-    //   placeholder: const Text(
-    //       "Illustration is loading..."), //optional, default is the CircularProgressIndicator().
-    //   errorWidget: const Icon(Icons.error_outline,
-    //       color: Colors.red,
-    //       size:
-    //           100), //optional, default is the Text('Could not load illustration!').
-    // )
+    child: const IllustrationLoader(
+        address: 'assets/illustrations/undraw_feeling_blue_-4-b7q.svg'),
   ),
   PageData(
       title: "Look Back and Reflect",
@@ -70,22 +51,13 @@ final pages = [
               color: kWhiteColor, borderRadius: BorderRadius.circular(35)),
           child: Image.asset('assets/images/analyze.png'))),
   PageData(
-      title: "Your Data, Always Safe",
-      description:
-          "With cloud integration, your journal entries and mood data are securely stored and easily recoverable. Stay connected and never worry about losing your personal journey.",
-      textColor: Colors.black,
-      child: UnDraw(
-        color: const Color(0xffED1E79),
-        width: 225,
-        height: 225,
-        illustration: UnDrawIllustration.security_on,
-        placeholder: const Text(
-            "Illustration is loading..."), //optional, default is the CircularProgressIndicator().
-        errorWidget: const Icon(Icons.error_outline,
-            color: Colors.red,
-            size:
-                100), //optional, default is the Text('Could not load illustration!').
-      ))
+    title: "Your Data, Always Safe",
+    description:
+        "With cloud integration, your journal entries and mood data are securely stored and easily recoverable. Stay connected and never worry about losing your personal journey.",
+    textColor: Colors.black,
+    child: const IllustrationLoader(
+        address: 'assets/illustrations/undraw_security_on_re_e491.svg'),
+  )
 ];
 
 class IntroPage extends StatelessWidget {

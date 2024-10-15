@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:soulscribe/constants/colors.dart';
-import 'package:soulscribe/widgets/undraw/lib/illustrations.g.dart';
-import 'package:soulscribe/widgets/undraw/lib/ms_undraw.dart';
+import 'package:soulscribe/widgets/illustration_loader.dart';
 
 class ActivityPageEntriesError extends StatefulWidget {
   const ActivityPageEntriesError({super.key});
@@ -28,20 +24,8 @@ class _ActivityPageEntriesErrorState extends State<ActivityPageEntriesError> {
         child: AnimatedOpacity(
           opacity: opacity,
           duration: const Duration(milliseconds: 500),
-          child: UnDraw(
-            height: 200,
-            color: kSecondaryColor,
-            illustration: UnDrawIllustration.web_search,
-            placeholder: const Padding(
-              padding: EdgeInsets.only(top: 50),
-              child: SpinKitDoubleBounce(
-                color: kSecondaryColor,
-                size: 75,
-              ),
-            ),
-            errorWidget:
-                const Icon(Icons.error_outline, color: Colors.red, size: 50),
-          ),
+          child: const IllustrationLoader(
+              address: 'assets/illustrations/undraw_web_search_re_efla.svg'),
         ));
   }
 

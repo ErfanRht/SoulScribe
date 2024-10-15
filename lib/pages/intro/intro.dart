@@ -49,7 +49,9 @@ final pages = [
           height: 250,
           decoration: BoxDecoration(
               color: kWhiteColor, borderRadius: BorderRadius.circular(35)),
-          child: Image.asset('assets/images/analyze.png'))),
+          child: const IllustrationLoader(
+              address:
+                  "assets/illustrations/undraw_developer_activity_re_39tg.svg"))),
   PageData(
     title: "Your Data, Always Safe",
     description:

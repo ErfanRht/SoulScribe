@@ -11,6 +11,7 @@ import 'package:soulscribe/models/entries.dart';
 import 'package:soulscribe/pages/main/main_page.dart';
 import 'package:soulscribe/pages/main/pages/settings/components/settings_item.dart';
 import 'package:soulscribe/widgets/circles_background/main_circles_background.dart';
+import 'package:soulscribe/widgets/snackbar.dart';
 
 import 'components/user-box/user-box.dart';
 
@@ -58,14 +59,24 @@ class _SettingsPageState extends State<SettingsPage> {
                     offIcon: IconlyBold.unlock,
                     onTapOn: () async {
                       if (await doesDeviceSupportBiometrics()) {
-                        final LocalAuthentication auth = LocalAuthentication();
-                        final bool didAuthenticate = await auth.authenticate(
-                            localizedReason:
-                                'Please authenticate to access SoulScript');
-                        if (didAuthenticate) {
-                          authenticateWithBiometricsStatus(status: true);
+                        try {
+                          final LocalAuthentication auth =
+                              LocalAuthentication();
+                          final bool didAuthenticate = await auth.authenticate(
+                              localizedReason:
+                                  'Please authenticate to access SoulScript');
+                          if (didAuthenticate) {
+                            authenticateWithBiometricsStatus(status: true);
+                          }
+                          return didAuthenticate;
+                        } catch (e) {
+                          ShowSnackBar(context,
+                              backgroundColor: kSecondaryColor.withOpacity(0.9),
+                              success: false,
+                              content:
+                                  "Your device doesn't support Biometrics");
+                          return false;
                         }
-                        return didAuthenticate;
                       } else {
                         return false;
                       }

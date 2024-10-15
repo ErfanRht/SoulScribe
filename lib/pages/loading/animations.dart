@@ -31,7 +31,7 @@ startLoadingAnimations() async {
   await Future.delayed(const Duration(milliseconds: 250));
   Get.find<LoadingAnimationsController>()
       .updateLoadingAnimations(newSpinkitOpacity: 1);
-  await Future.delayed(const Duration(milliseconds: 3850));
+  await Future.delayed(const Duration(milliseconds: 3000));
   Get.find<LoadingAnimationsController>().updateLoadingAnimations(
       newLogoOpacity: 0,
       newTextOpacity: 0,

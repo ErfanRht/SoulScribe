@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:soulscribe/constants/data.dart';
 import 'dart:convert';
 
 import 'package:soulscribe/main_controller.dart';
 
 Future<void> fetchQuotes(List<String>? tags) async {
+  bool success = false;
   tags = tags ??
       [
         "Change",
@@ -14,23 +16,31 @@ Future<void> fetchQuotes(List<String>? tags) async {
         "Inspirational",
         "Motivational",
       ];
-  HttpOverrides.global = MyHttpOverrides();
-  List<List<String>> quotes = [];
-  final response = await http.get(Uri.parse(
-      'https://api.quotable.io/quotes/random?tags=${tags.join('|')}&limit=50&maxLength=140'));
+  try {
+    HttpOverrides.global = MyHttpOverrides();
+    List<List<String>> quotes = [];
+    final response = await http.get(Uri.parse(
+        'https://api.quotable.io/quotes/random?tags=${tags.join('|')}&limit=50&maxLength=140'));
 
-  if (response.statusCode == 200) {
-    var data = jsonDecode(response.body);
-    var quoteResults = data;
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body);
+      var quoteResults = data;
 
-    for (var quote in quoteResults) {
-      quotes.add([quote['content'], quote['author']]);
+      for (var quote in quoteResults) {
+        quotes.add([quote['content'], quote['author']]);
+      }
+      quotes.shuffle();
+
+      Get.find<MainController>().updateMainStete(newQuotes: quotes);
+      success = true;
+    } else {
+      print('Failed to fetch data');
     }
-    quotes.shuffle();
-
-    Get.find<MainController>().updateMainStete(newQuotes: quotes);
-  } else {
-    print('Failed to fetch data');
+  } catch (e) {
+    print('Failed to fetch data: $e');
+  }
+  if (!success) {
+    Get.find<MainController>().updateMainStete(newQuotes: emergencyQuotes);
   }
 }
 

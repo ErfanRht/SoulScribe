@@ -98,3 +98,155 @@ List<List<String>> sampleEntries = [
     "2024-10-10"
   ]
 ];
+
+List<List<String>> emergencyQuotes = [
+  [
+    "Keep your eyes on the stars and your feet on the ground.",
+    "Theodore Roosevelt"
+  ],
+  [
+    "If you're changing the world, you're working on important things. You're excited to get up in the morning.",
+    "Larry Page"
+  ],
+  [
+    "Education is the most powerful weapon which you can use to change the world.",
+    "Nelson Mandela"
+  ],
+  [
+    "He that never changes his opinions, never corrects his mistakes, and will never be wiser on the morrow than he is today.",
+    "Tryon Edwards"
+  ],
+  ["Problems are not stop signs, they are guidelines.", "Robert Schuller"],
+  [
+    "The key is to keep company only with people who uplift you, whose presence calls forth your best.",
+    "Epictetus"
+  ],
+  [
+    "Change your life today. Don't gamble on the future, act now, without delay.",
+    "Simone de Beauvoir"
+  ],
+  ["I can, therefore I am.", "Simone Weil"],
+  [
+    "Unless one is able to live fully in the present, the future is a hoax.",
+    "Alan Watts"
+  ],
+  ["There's power in looking silly and not caring that you do.", "Amy Poehler"],
+  [
+    "Accept the challenges so that you can feel the exhilaration of victory.",
+    "George S. Patton"
+  ],
+  [
+    "Difficulties increase the nearer we get to the goal.",
+    "Johann Wolfgang von Goethe"
+  ],
+  [
+    "Promises are the uniquely human way of ordering the future, making it predictable and reliable to the extent that this is humanly possible.",
+    "Hannah Arendt"
+  ],
+  ["There is nothing impossible to him who will try.", "Alexander the Great"],
+  [
+    "In order to succeed, we must first believe that we can.",
+    "Nikos Kazantzakis"
+  ],
+  ["A disciplined mind brings happiness.", "The Buddha"],
+  [
+    "The only way to make sense out of change is to plunge into it, move with it, and join the dance.",
+    "Alan Watts"
+  ],
+  [
+    "A good plan violently executed now is better than a perfect plan executed next week.",
+    "George S. Patton"
+  ],
+  [
+    "You are always free to change your mind and choose a different future, or a different past.",
+    "Richard Bach"
+  ],
+  [
+    "If you want to succeed you should strike out on new paths, rather than travel the worn paths of accepted success.",
+    "John Locke"
+  ],
+  ["There is nothing permanent except change.", "Heraclitus"],
+  [
+    "By living deeply in the present moment we can understand the past better and we can prepare for a better future.",
+    "Thích Nhất Hạnh"
+  ],
+  [
+    "No valid plans for the future can be made by those who have no capacity for living now.",
+    "Alan Watts"
+  ],
+  [
+    "Your talent is God's gift to you. What you do with it is your gift back to God.",
+    "Leo Buscaglia"
+  ],
+  [
+    "Opportunity does not knock, it presents itself when you beat down the door.",
+    "Kyle Chandler"
+  ],
+  ["I never think of the future. It comes soon enough.", "Albert Einstein"],
+  ["If you aren't going all the way, why go at all?", "Joe Namath"],
+  [
+    "If we all did the things we are capable of doing, we would literally astound ourselves.",
+    "Thomas Edison"
+  ],
+  [
+    "Don't turn away from possible futures before you're certain you don't have anything to learn from them.",
+    "Richard Bach"
+  ],
+  [
+    "There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.",
+    "Epictetus"
+  ],
+  [
+    "Ability is what you're capable of doing. Motivation determines what you do. Attitude determines how well you do it.",
+    "Lou Holtz"
+  ],
+  ["As you think, so shall you become.", "Bruce Lee"],
+  ["Only I can change my life. No one can do it for me.", "Carol Burnett"],
+  [
+    "You can't cross the sea merely by standing and staring at the water.",
+    "Rabindranath Tagore"
+  ],
+  [
+    "To improve is to change; to be perfect is to change often.",
+    "Winston Churchill"
+  ],
+  ["Things do not happen. Things are made to happen.", "John F. Kennedy"],
+  ["We must become the change we want to see.", "Mahatma Gandhi"],
+  [
+    "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
+    "Helen Keller"
+  ],
+  ["What we achieve inwardly will change outer reality.", "Plutarch"],
+  ["The best way to predict your future is to create it.", "Peter Drucker"],
+  [
+    "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+    "Thomas Edison"
+  ],
+  [
+    "The future is completely open, and we are writing it moment to moment.",
+    "Pema Chödrön"
+  ],
+  [
+    "I know where I'm going and I know the truth, and I don't have to be what you want me to be. I'm free to be what I want.",
+    "Muhammad Ali"
+  ],
+  ["The most effective way to do it, is to do it.", "Amelia Earhart"],
+  ["Everything comes to him who hustles while he waits.", "Thomas Edison"],
+  [
+    "To accomplish great things, we must not only act, but also dream; not only plan, but also believe.",
+    "Anatole France"
+  ],
+  ["Be the change that you want to see in the world.", "Mahatma Gandhi"],
+  [
+    "Most folks are as happy as they make up their minds to be.",
+    "Abraham Lincoln"
+  ],
+  [
+    "The future belongs to those who believe in the beauty of their dreams.",
+    "Eleanor Roosevelt"
+  ],
+  [
+    "It is in the nature of things that joy arises in a person free from remorse.",
+    "The Buddha"
+  ]
+];

@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  http: ^0.13.6
+  http: ^1.2.2
   share_plus: ^10.0.2
 
   # Packages for managing states and user data
@@ -35,7 +35,7 @@ dependencies:
   fhir_yaml: ^0.9.0
   cli_util: ^0.4.1
   yaml: ^3.1.2
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
 
   # TableCalendar requrements
   simple_gesture_detector: ^0.2.1

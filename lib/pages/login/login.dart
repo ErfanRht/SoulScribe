@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,9 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    final node = FocusScope.of(context);
+    // ignore: unused_local_variable
     LoginPageAnimationsController loginPageAnimationsController =
         Get.put(LoginPageAnimationsController());
     startAnimations();

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:soulscribe/constants/colors.dart';
 
 class LoginButton extends StatelessWidget {
   final Color insideColor;

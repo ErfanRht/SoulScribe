@@ -40,7 +40,10 @@ Future<void> fetchQuotes(List<String>? tags) async {
     print('Failed to fetch data: $e');
   }
   if (!success) {
-    Get.find<MainController>().updateMainStete(newQuotes: emergencyQuotes);
+    List<List<String>> shuffledEmergencyQuotes = emergencyQuotes;
+    shuffledEmergencyQuotes.shuffle();
+    Get.find<MainController>()
+        .updateMainStete(newQuotes: shuffledEmergencyQuotes);
   }
 }
 

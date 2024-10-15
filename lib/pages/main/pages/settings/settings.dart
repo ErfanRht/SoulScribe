@@ -64,7 +64,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               LocalAuthentication();
                           final bool didAuthenticate = await auth.authenticate(
                               localizedReason:
-                                  'Please authenticate to access SoulScript');
+                                  'Please authenticate to access SoulScribe');
                           if (didAuthenticate) {
                             authenticateWithBiometricsStatus(status: true);
                           }

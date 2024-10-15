@@ -63,7 +63,7 @@ class BiometricAuthScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 50),
                 child: Text(
-                  "Please authenticate to access SoulScript",
+                  "Please authenticate to access SoulScribe",
                   style: GoogleFonts.ubuntu(
                       color: kWhiteColor,
                       fontSize: 17.5,
@@ -79,7 +79,7 @@ class BiometricAuthScreen extends StatelessWidget {
 
   authIt(BuildContext context) async {
     final bool didAuthenticate = await auth.authenticate(
-        localizedReason: 'Please authenticate to access SoulScript');
+        localizedReason: 'Please authenticate to access SoulScribe');
     if (didAuthenticate) {
       authenticateWithBiometricsStatus(status: true);
       Navigator.pushReplacementNamed(context, home_route);

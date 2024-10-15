@@ -1,17 +1,18 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soulscribe/constants/colors.dart';
 import 'package:soulscribe/pages/login/animations.dart';
 import 'package:soulscribe/pages/login/components/login_button.dart';
+import 'package:soulscribe/pages/login/components/sorry_alert.dart';
 import 'package:soulscribe/pages/user_setup/user_setup.dart';
 import 'package:soulscribe/widgets/copyright.dart';
 import 'package:soulscribe/widgets/page_transition/src/enum.dart';
 import 'package:soulscribe/widgets/page_transition/src/page_transition.dart';
 import '../../widgets/circles_background/intro_circles_background.dart';
-import 'components/main_text_field.dart';
 import 'components/scrollable_form.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -28,7 +29,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
 
-  String _username = '';
+  final String _username = '';
   final bool _loading = false;
 
   @override
@@ -85,37 +86,46 @@ class _LoginScreenState extends State<LoginScreen> {
                             outsideColor: kSecondaryColor,
                             insideColor: kSecondaryColor,
                             image: const SizedBox(),
-                            onTap: () {},
+                            onTap: () {
+                              sorryAlert(context);
+                            },
                           ),
                           const SizedBox(
                             height: 20,
                           ),
                           LoginButton(
-                            image: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Image.asset("assets/images/google.png"),
-                            ),
+                            image: const Padding(
+                                padding: EdgeInsets.only(right: 10, left: 12.5),
+                                child: Icon(
+                                  FontAwesomeIcons.google,
+                                  color: kPrimaryColor,
+                                )),
                             text: "Continue with Google",
                             textColor: kPrimaryColor,
                             outsideColor: kPrimaryColor,
                             insideColor: kWhiteColor,
-                            onTap: () {},
+                            onTap: () {
+                              sorryAlert(context);
+                            },
                           ),
                           const SizedBox(
                             height: 20,
                           ),
                           LoginButton(
-                            image: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Image.asset(
-                                "assets/images/apple.png",
-                              ),
-                            ),
+                            image: const Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Icon(
+                                  FontAwesomeIcons.apple,
+                                  color: kPrimaryColor,
+                                  size: 30,
+                                )),
                             text: "Continue with Apple",
                             textColor: kPrimaryColor,
                             outsideColor: kPrimaryColor,
                             insideColor: kWhiteColor,
-                            onTap: () {},
+                            onTap: () {
+                              sorryAlert(context);
+                            },
                           ),
                           const SizedBox(
                             height: 20,
@@ -144,7 +154,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Colors.grey,
                             nameColor: kSecondaryColor,
                           ),
-                          // _form(node, context),
                         ],
                       ),
                     ],
@@ -156,47 +165,5 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       );
     });
-  }
-
-  Widget _form(FocusScopeNode node, BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        MainTextField(
-          label: 'Username',
-          usernameField: true,
-          onChanged: (value) => setState(() {
-            _username = value;
-          }),
-          onEditingComplete: () => node.nextFocus(),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        MainTextField(
-          label: 'Password',
-          controller: _passwordController,
-          passwordField: true,
-          onSubmitted: (_) {
-            node.unfocus();
-          },
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        const Row(
-          children: [
-            Text(
-              'Sign In',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-              ),
-            ),
-            Spacer(),
-          ],
-        ),
-      ],
-    );
   }
 }

@@ -34,7 +34,7 @@ Join SoulScribe and take a step towards a more mindful and reflective life.
 </div>
 
 ## Download
-  You can simply download it for Android from [Here](https://github.com/ErfanRht/SoulScribe/releases/tag/1.1.1).
+  You can simply download it for Android from [Here](https://github.com/ErfanRht/SoulScribe/releases/tag/v1.1.1).
 
 ## Elegant Design
 SoulScribe is built using Flutter, providing a responsive and smooth experience across all devices. Whether you're on a phone or tablet, your journaling experience will feel natural and intuitive.

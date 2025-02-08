@@ -17,7 +17,21 @@ Join SoulScribe and take a step towards a more mindful and reflective life.
 [![GitHub issues](https://img.shields.io/github/issues/ErfanRht/SoulScribe?style=social)](https://github.com/ErfanRht/SoulScribe/issues) 
 [![GitHub license](https://img.shields.io/github/license/ErfanRht/SoulScribe?style=social)](https://github.com/ErfanRht/SoulScribe/blob/master/LICENSE)
 
-<p align="center"><a href="https://github.com/ErfanRht/SoulScribe/"><img src="./screenshots/showcase.png" width="100%"/></a></p>
+<p align="center"><a href="https://github.com/ErfanRht/SoulScribe/"><img src="./screenshots/48125952_9210738.jpg" width="100%"/></a>
+
+## Screenshots
+
+<div align="center" style="width:100%;display:flex;justify-content:space-between;">
+<img width="32%" src="https://github.com/ErfanRht/SoulScribe/blob/master/screenshots/Screenshot_2025-02-08-16-54-00-904_com.example.soulscribe.jpg" align="center" alt="screenshot" />
+<img width="32%" src="https://github.com/ErfanRht/SoulScribe/blob/master/screenshots/Screenshot_2025-02-08-17-21-00-692_com.example.soulscribe.jpg" align="center" alt="screenshot" />
+<img width="32%" src="https://github.com/ErfanRht/SoulScribe/blob/master/screenshots/Screenshot_2025-02-08-17-21-06-938_com.example.soulscribe.jpg" align="center" alt="screenshot" />
+</div>
+<p> </p>
+<div align="center" style="width:100%;display:flex;justify-content:space-between;">
+<img width="32%" src="https://github.com/ErfanRht/SoulScribe/blob/master/screenshots/Screenshot_2025-02-08-17-21-46-061_com.example.soulscribe.jpg" align="center" alt="screenshot" />
+<img width="32%" src="https://github.com/ErfanRht/SoulScribe/blob/master/screenshots/Screenshot_2025-02-08-17-22-02-690_com.example.soulscribe.jpg" align="center" alt="screenshot" />
+<img width="32%" src="https://github.com/ErfanRht/SoulScribe/blob/master/screenshots/Screenshot_2025-02-08-17-22-09-046_com.example.soulscribe.jpg" align="center" alt="screenshot" />
+</div>
 
 ## Download
   You can simply download it for Android from [Here](https://github.com/ErfanRht/SoulScribe/releases/tag/1.1.1).
